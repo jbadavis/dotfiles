@@ -1,0 +1,103 @@
+"*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "be8e9a75-9355-4f32-af09-cbd26cd44d33"
+  "atom-material-ui":
+    colors:
+      paintCursor: true
+    tabs: {}
+    treeView:
+      compactList: true
+    ui:
+      animations: false
+      panelContrast: true
+  "atom-minify": {}
+  "atom-ternjs":
+    useSnippets: true
+  "autoclose-html":
+    forceInline: [
+      "title"
+      "h1"
+      "h2"
+      "h3"
+      "h4"
+      "h5"
+      "h6"
+      "p"
+      "div"
+      "span"
+    ]
+  core:
+    closeDeletedFileTabs: true
+    customFileTypes:
+      "source.ini": [
+        ".buckconfig"
+        ".hgrc"
+        ".flowconfig"
+      ]
+      "source.json": [
+        ".arcconfig"
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
+    disabledPackages: [
+      "kite"
+      "linter-scss-lint"
+      "atom-ternjs"
+      "pigments"
+      "linter-jshint"
+      "react"
+    ]
+    reopenProjectMenuCount: 20
+    telemetryConsent: "limited"
+    themes: [
+      "atom-material-ui"
+      "atom-material-syntax-dark"
+    ]
+    titleBar: "custom"
+  editor:
+    autoIndentOnPaste: false
+    backUpBeforeSaving: true
+    fontFamily: "Monaco"
+    fontSize: 12
+    showIndentGuide: true
+  "exception-reporting":
+    userId: "751c58f2-f85f-670a-4c2b-66002acfc0f3"
+  "file-icons": {}
+  "language-babel":
+    autoIndentJSX: true
+  linter:
+    errorPanelHeight: 30
+  "linter-eslint": {}
+  "linter-scss-lint": {}
+  "linter-ui-default":
+    showPanel: true
+  minimap: {}
+  "one-dark-ui": {}
+  pigments:
+    extendAutocompleteToColorValue: true
+    markerType: "native-background"
+    mergeColorDuplicates: true
+  "prettier-atom":
+    prettierOptions:
+      singleQuote: true
+    useEslint: true
+  "seti-ui":
+    compactView: true
+    themeColor: "Steel"
+  welcome:
+    showOnStartup: false
+".ansi.text":
+  editor:
+    tabLength: 4
+".hack.html.text":
+  editor:
+    tabLength: 4
+".hackfragment.source":
+  editor:
+    tabLength: 4
+".hg-commit.text":
+  editor:
+    tabLength: 4

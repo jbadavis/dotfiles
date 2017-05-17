@@ -1,0 +1,10 @@
+syntax on 
+set expandtab
+set tabstop=4
+set laststatus=2
+set nostartofline
+set number
+set numberwidth=3
+highlight LineNr term=bold cterm=NONE ctermfg=81 ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+set cursorline
+set ruler
