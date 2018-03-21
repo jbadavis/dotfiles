@@ -1,5 +1,7 @@
 syntax on
-colorscheme monokai-phoenix
+"colorscheme monokai-phoeni
+colorscheme hybrid
+"colorscheme dracula
 
 set expandtab
 set laststatus=2
@@ -14,23 +16,79 @@ set nowrap
 set expandtab
 set shiftwidth=2
 set softtabstop=2
-set autochdir
+" set autochdir
 set backspace=indent,eol,start
 set linespace=2
+set cmdheight=2
+set updatetime=100
+set autoread
 
-let g:ctrlp_working_path_mode = 'r'
+set backupdir=~/.vim/tmp/backup//
+set directory=~/.vim/tmp/swap//
+set undodir=~/.vim/tmp/undo//
+
+command Bd bp\|bd \#
+
+" CtrlP
+let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
+" Netrw
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 15
 
+" Ale
 let g:ale_fixers = {
 \   'javascript': ['eslint'],
 \}
+
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
+let g:ale_sign_column_always = 1
 
+" Buffers
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
+set wildchar=<Tab> wildmenu wildmode=full
+
+" Airline
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#formatter = 'jsformatter'
+"let g:airline#extensions#tabline#show_tabs = 0
+let g:airline_theme='tomorrow'
+"let g:airline_powerline_fonts = 1
+
+" Ctrl-Space
+set nocompatible
+set hidden
+
+" Splits
+" - Down
+nnoremap <C-J> <C-W><C-J>
+" - Up
+nnoremap <C-K> <C-W><C-K>
+" - Right
+nnoremap <C-L> <C-W><C-L>
+" - left
+nnoremap <C-H> <C-W><C-H>
+
+" NERDTree
+let NERDTreeMinimalUI=1
+nnoremap <silent> <leader>d :NERDTreeToggle<CR>
+"autocmd FileType nerdtree noremap <buffer> <Tab> <nop>
+nnoremap <silent> <leader>f :NERDTreeFind<CR>
+"autocmd FileType nerdtree noremap <buffer> <S-Tab> <nop>
+
+" Ack/Ag
+cnoreabbrev Ack Ack!
+nnoremap <silent> <leader>s :Ack!<Space>
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+"GitGutter
+"nnoremap <leader>g :GitGutterLineHighlightsToggle<CR>
 
