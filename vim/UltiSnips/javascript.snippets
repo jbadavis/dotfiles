@@ -1,0 +1,44 @@
+snippet im "import ..." 
+import ${1} from '${2}'
+endsnippet
+
+snippet af "const func = a => ..." b
+const ${1} = (${2}) => ${3}
+endsnippet
+
+snippet nf "function func(a) { ... " b
+function ${1}(${2}) {
+  ${3}
+
+  return ${4};
+};
+endsnippet
+
+snippet de "describe('..." b
+describe('${1}', () => {
+  ${2} 
+});
+endsnippet
+
+snippet it "it('..." b
+it('${1}', () => {
+  ${2}
+});
+endsnippet
+
+snippet ex "expect(..." b
+expect(${1}).${2}
+endsnippet
+
+snippet je "jest.fn()" 
+jest.fn(${1})
+endsnippet
+
+snippet ed "export default" b
+export default 
+endsnippet
+
+snippet co "import ..." b
+console.log(${1});
+endsnippet
+

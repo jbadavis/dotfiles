@@ -1,54 +1,64 @@
 " Packages
 " ---
-" w0rp/ale
-" junegunn/fzf.vim
-" ervandew/supertab
 " easymotion/vim-easymotion
-" tpope/vim-fugitive
-" pangloss/vim-javascript
+" ervandew/supertab
+" junegunn/fzf.vim
 " mxw/vim-jsx
+" pangloss/vim-javascript
 " prettier/vim-prettier
+" tpope/vim-fugitive
 " tpope/vim-projectionist
-" tpope/vim-vinegar
+" w0rp/ale
 
 syntax on
 set background=dark
 let g:hybrid_custom_term_colors = 1
-colorscheme hybrid 
+colorscheme hybrid
 
+set autoindent
+set autoread
+set backspace=indent,eol,start
+set clipboard=unnamed
+set cmdheight=2
+set cursorline
 set expandtab
+set expandtab
+set hlsearch
+set incsearch
 set laststatus=2
+set linespace=2
 set nostartofline
+set nowrap
 set number
 set numberwidth=4
-set cursorline
-set ruler
-set autoindent
-set smartindent
-set nowrap
-set expandtab
-set shiftwidth=2
-set softtabstop=2
-set backspace=indent,eol,start
-set linespace=2
-set cmdheight=2
-set updatetime=100
-set autoread
-set clipboard=unnamed
+set path+=**  
 set relativenumber
-set hlsearch
-
+set ruler
+set scrolloff=2
+set shiftwidth=2
+set smartindent
+set softtabstop=2
 set statusline+=%F
+set updatetime=100
+set wildignore+=/node_modules/**
+set wildmenu
+set splitbelow
+set undofile
 
-highlight link xmlEndTag xmlTag
+hi StatusLine ctermbg=black ctermfg=white
+hi link xmlEndTag xmlTag
 
 set backupdir=~/.vim/tmp/backup//
 set directory=~/.vim/tmp/swap//
 set undodir=~/.vim/tmp/undo//
 
+let g:UltiSnipsSnippetDir = "~/.vim/snippets/"
+let g:UltiSnipsSnippetDirectories = ['~/.vim/ultiSnips', 'UltiSnips']
+
 let mapleader = " "
 
-" Ale
+map <Leader> <Plug>(easymotion-prefix)
+
 let g:ale_fixers = {
 \   'javascript': ['eslint'],
 \   'css': [],
@@ -57,42 +67,41 @@ let g:ale_fixers = {
 let g:ale_fix_on_save = 1
 let g:ale_lint_on_text_changed = 'never'
 
-" Buffers
-set wildchar=<Tab> wildmenu wildmode=full
 nnoremap <Tab> :Buffers<CR>
+nnoremap <S-Tab> :bn<CR>
 
-" FZF
 set rtp+=/usr/local/opt/fzf
-
-" FZF.vim
 autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
-
-let g:fzf_layout = { 'down': '~50%' }
-
+let g:fzf_layout = { 'down': '~20%' }
 command! -bang -nargs=* Ag
       \ call fzf#vim#ag(
       \   <q-args>,
       \   ' --color-path="" -p ~/.ignore',
-      \  <bang>0 ? fzf#vim#with_preview('up:60%')
+      \  <bang>0 ? fzf#vim#with_preview('up:40%')
       \        : fzf#vim#with_preview('right:50%:hidden', '?'),
       \   <bang>0
       \ )
 
-" Leader mapping
 nnoremap <silent><leader>p :GFiles<CR> 
 nnoremap <silent><leader>f :Ag<CR>
-nnoremap <silent><leader>b :Buffers<CR> 
 nnoremap <silent><leader>c :Commits<CR> 
+
+nnoremap <silent><leader>' :terminal<CR> 
+
 nnoremap <silent><leader>\ :vsp<CR> 
-nnoremap <silent><leader>a :A<CR> 
-nnoremap <silent><leader>w <C-W><C-W>
-nnoremap <silent><leader>gs :Gstatus<CR>
+nnoremap <silent><leader><bar> :sp<CR> 
+
 nnoremap <silent><leader>n :nohlsearch<CR>
 
-nnoremap <silent><leader>= <C-W>
 nnoremap <silent><leader>j <C-W><C-J>
 nnoremap <silent><leader>k <C-W><C-K>
 nnoremap <silent><leader>l <C-W><C-L>
 nnoremap <silent><leader>h <C-W><C-H>
+
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>mg :Magit<CR>
+
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
