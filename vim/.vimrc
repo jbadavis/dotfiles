@@ -11,7 +11,10 @@
 " w0rp/ale
 
 syntax on
+filetype plugin on
+
 set background=dark
+
 let g:hybrid_custom_term_colors = 1
 colorscheme hybrid
 
@@ -22,42 +25,38 @@ set clipboard=unnamed
 set cmdheight=2
 set cursorline
 set expandtab
-set expandtab
 set hlsearch
 set incsearch
 set laststatus=2
 set linespace=2
 set nostartofline
 set nowrap
-set number
-set numberwidth=4
+set omnifunc=syntaxcomplete#Complete
 set path+=**  
-set relativenumber
 set ruler
 set scrolloff=2
 set shiftwidth=2
+set showcmd
 set smartindent
 set softtabstop=2
+set splitbelow
+set splitright
 set statusline+=%F
+set undofile
 set updatetime=100
 set wildignore+=/node_modules/**
 set wildmenu
-set splitbelow
-set undofile
-
-hi StatusLine ctermbg=black ctermfg=white
-hi link xmlEndTag xmlTag
+set wildmode=longest:list,full
 
 set backupdir=~/.vim/tmp/backup//
 set directory=~/.vim/tmp/swap//
 set undodir=~/.vim/tmp/undo//
 
+let g:SuperTabDefaultCompletionType = "context"
+
+let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsSnippetDir = "~/.vim/snippets/"
 let g:UltiSnipsSnippetDirectories = ['~/.vim/ultiSnips', 'UltiSnips']
-
-let mapleader = " "
-
-map <Leader> <Plug>(easymotion-prefix)
 
 let g:ale_fixers = {
 \   'javascript': ['eslint'],
@@ -66,9 +65,6 @@ let g:ale_fixers = {
 \}
 let g:ale_fix_on_save = 1
 let g:ale_lint_on_text_changed = 'never'
-
-nnoremap <Tab> :Buffers<CR>
-nnoremap <S-Tab> :bn<CR>
 
 set rtp+=/usr/local/opt/fzf
 autocmd! FileType fzf
@@ -83,6 +79,13 @@ command! -bang -nargs=* Ag
       \        : fzf#vim#with_preview('right:50%:hidden', '?'),
       \   <bang>0
       \ )
+
+map <Space> <leader>
+
+map <leader> <Plug>(easymotion-prefix)
+
+nnoremap <Tab> :Buffers<CR>
+nnoremap <S-Tab> :bn<CR>
 
 nnoremap <silent><leader>p :GFiles<CR> 
 nnoremap <silent><leader>f :Ag<CR>
@@ -101,7 +104,6 @@ nnoremap <silent><leader>l <C-W><C-L>
 nnoremap <silent><leader>h <C-W><C-H>
 
 nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>mg :Magit<CR>
+nnoremap <leader>m :Magit<CR>
 
-filetype plugin on
-set omnifunc=syntaxcomplete#Complete
+nnoremap <leader>d :ALEGoToDefinition<CR>
