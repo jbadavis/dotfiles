@@ -14,6 +14,12 @@ function ${1}(${2}) {
 };
 endsnippet
 
+snippet be "beforeEach('..." b
+beforeEach(() => {
+  ${1} 
+});
+endsnippet
+
 snippet de "describe('..." b
 describe('${1}', () => {
   ${2} 
@@ -40,5 +46,9 @@ endsnippet
 
 snippet co "import ..." b
 console.log(${1});
+endsnippet
+
+snippet con "const ... = " b
+const ${1} = ${2};
 endsnippet
 
