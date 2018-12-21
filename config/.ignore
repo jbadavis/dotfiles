@@ -1,0 +1,8 @@
+node_modules/
+dist/
+coverage/
+bin/
+*.snap
+yarn.lock
+windows-precompiled/
+__snapshots__/

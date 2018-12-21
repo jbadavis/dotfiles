@@ -11,21 +11,21 @@ Plug 'jreybert/vimagit', {'on': ['Magit']}
 Plug 'junegunn/goyo.vim', {'on': ['Goyo']}
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-slash'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'mxw/vim-jsx'
-Plug 'pangloss/vim-javascript'
-Plug 'prettier/vim-prettier'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive', {'on': ['Gstatus']}
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-haml'
+Plug 'tpope/vim-endwise'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'Shougo/denite.nvim', {'on': ['Denite']}
-Plug 'hail2u/vim-css3-syntax'
 Plug 'lambdalisue/gina.vim'
+Plug 'markonm/traces.vim'
+Plug 'prettier/vim-prettier'
+Plug 'rstacruz/vim-closer'
+Plug 'sheerun/vim-polyglot'
 
 Plug 'w0ng/vim-hybrid'
 Plug 'arcticicestudio/nord-vim'
@@ -43,36 +43,18 @@ Plug 'w0rp/ale'
   let g:ale_fix_on_save = 1
   let g:ale_lint_on_text_changed = 'never'
 
-Plug 'dyng/ctrlsf.vim'
-  let g:ctrlsf_winsize = '30%'
-  let g:ctrlsf_default_root = 'project'
-  let g:ctrlsf_default_view_mode = 'compact'
-  let g:ctrlsf_auto_close = {
-      \    "normal" : 0,
-      \    "compact": 0
-      \}
-  let g:ctrlsf_auto_focus = {
-      \    "at": "start"
-      \}
-
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
   set rtp+=/usr/local/opt/fzf
 
   autocmd! FileType fzf
   autocmd  FileType fzf set laststatus=0 noruler
-     \| autocmd BufLeave <buffer> set laststatus=2 ruler
-
-  let g:fzf_layout = { 'down': '~25%' }
-  let $FZF_DEFAULT_OPTS .= ' --inline-info --border'
+    \| autocmd BufLeave <buffer> set laststatus=2 ruler
 
   command! -bang -nargs=* Ag
-      \call fzf#vim#ag(
-      \    <q-args>, ' --color-path="" -p ~/.ignore',
-      \    <bang>0 ? fzf#vim#with_preview('up:40%')
-      \            : fzf#vim#with_preview('right:50%:hidden', '?'),
-      \    <bang>0)
+    \call fzf#vim#ag(<q-args>, ' --color-path="" -p ~/.ignore')
 
+  let $FZF_DEFAULT_OPTS .= ' --inline-info --border --reverse'
   let g:fzf_colors =
   \ { 'fg':      ['fg', 'Normal'],
     \ 'bg':      ['bg', 'Normal'],
@@ -102,25 +84,26 @@ Plug 'sodapopcan/vim-twiggy', {'on': ['Twiggy']}
 
 call plug#end()
 
+if has("termguicolors")
+  set termguicolors
+endif
+
 if has("gui_running")
   au! GUIEnter * set vb t_vb=
   set guioptions=
   set macligatures
   set gfn=Fira\ Code\ Retina:h12
-
-  colo iceberg
-  let g:airline_theme='iceberg'
-else
-  colo hybrid
-  let g:hybrid_reduced_contrast = 1
 endif
 
+colo snow
+let g:airline_theme='snow_dark'
+
+set nocompatible
 set autoindent
 set autoread
 set backspace=indent,eol,start
 set clipboard=unnamed
 set cmdheight=2
-set cursorline
 set expandtab
 set incsearch
 set laststatus=2
@@ -130,7 +113,6 @@ set nowrap
 set ruler
 set scrolloff=2
 set shiftwidth=2
-set showcmd
 set smartindent
 set softtabstop=2
 set splitbelow
@@ -142,36 +124,46 @@ set wildignore+=/node_modules/**
 set wildmenu
 set wildmode=longest:list,full
 set noshowmode
-set termguicolors
 set background=dark
+set timeoutlen=1000
+set ttimeoutlen=0
+set noswapfile
 
 set backupdir=~/.vim/tmp/backup//
-set directory=~/.vim/tmp/swap//
 set undodir=~/.vim/tmp/undo//
+
+set fillchars=vert:\│
 
 syntax on
 
 filetype plugin on
+
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType gitcommit setlocal spell spelllang=en
 autocmd FileType markdown,tex,latex setlocal spell spelllang=en linebreak wrap
 
 nnoremap <Tab> :Buffers<CR>
-nnoremap <silent><leader>f :Ag<CR>
 nnoremap <silent><leader>p :GFiles<CR>
+nnoremap <silent> <leader>- :Files <C-r>=expand("%:h")<CR>/<CR>
 
-nnoremap <leader>s :CtrlSF<CR>
-nnoremap <leader>S :CtrlSF 
-
+nnoremap <silent> <Leader>s :Rg <C-R><C-W><CR>
+nnoremap <silent><leader>S :Rg<CR>
 nnoremap <leader>d :ALEGoToDefinition<CR>
+nnoremap <leader>D :cd ~/Git/asos-web-
+
 nnoremap <F6> :Goyo<CR>
 
-nnoremap <silent><leader>' :term<CR><C-W>L
+nnoremap <silent><leader>' :term<CR>
 nnoremap <leader>\ :vsp<CR>
 nnoremap <leader><bar> :sp<CR>
 
-nnoremap <leader>ht :GitGutterSignsToggle<CR>
-nnoremap <leader>gb :Twiggy<CR>
-nnoremap <leader>gd :Git! diff --staged<CR>
-nnoremap <leader>gl :GV<CR>
-nnoremap <silent><leader>gs :GitGutterSignsEnable<CR> :Gstatus<CR>
+nnoremap <silent><leader>gb :Twiggy<CR>
+nnoremap <silent><leader>gl :GV<CR>
+nnoremap <silent><leader>gc :Commits<CR>
+nnoremap <silent><leader>gs :Gstatus<CR>
+
+nnoremap <silent><leader>an :ALENext<CR>
+nnoremap <silent><leader>ap :ALEPrevious<CR>
+
+nnoremap <leader>R :source ~/.vimrc<CR> :PlugInstall<CR>
+
