@@ -95,8 +95,8 @@ if has("gui_running")
   set gfn=Fira\ Code\ Retina:h12
 endif
 
-colo snow
-let g:airline_theme='snow_dark'
+colo nord
+let g:airline_theme='nord'
 
 set nocompatible
 set autoindent
