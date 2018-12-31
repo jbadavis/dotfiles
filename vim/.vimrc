@@ -28,11 +28,11 @@ Plug 'rstacruz/vim-closer'
 Plug 'sheerun/vim-polyglot'
 
 Plug 'w0ng/vim-hybrid'
-Plug 'arcticicestudio/nord-vim'
 Plug 'rakr/vim-two-firewatch'
 Plug 'jnurmine/zenburn'
 Plug 'nightsense/snow'
 Plug 'cocopon/iceberg.vim'
+Plug 'jbadavis/nord-vim', { 'branch': 'develop' }
 
 Plug 'w0rp/ale'
   let g:ale_fixers = {
@@ -96,7 +96,7 @@ if has("gui_running")
 endif
 
 colo nord
-let g:airline_theme='nord'
+let g:nord_comment_brightness = 12
 
 set nocompatible
 set autoindent
