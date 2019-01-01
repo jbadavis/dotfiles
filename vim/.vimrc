@@ -77,7 +77,7 @@ Plug 'SirVer/ultisnips'
 Plug 'airblade/vim-gitgutter'
   let g:gitgutter_signs = 0
 
-Plug 'sodapopcan/vim-twiggy', {'on': ['Twiggy']}
+Plug 'jbadavis/vim-twiggy', {'on': ['Twiggy'], 'branch': ['fix/fugitive-buffer-deprecated']}
   let g:twiggy_local_branch_sort = 'mru'
   let g:twiggy_group_locals_by_slash = 0
   let g:twiggy_num_columns = 50
