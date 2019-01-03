@@ -7,8 +7,8 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 Plug 'ervandew/supertab'
-Plug 'jreybert/vimagit', {'on': ['Magit']}
-Plug 'junegunn/goyo.vim', {'on': ['Goyo']}
+Plug 'jreybert/vimagit', { 'on': 'Magit' }
+Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-slash'
 Plug 'tpope/vim-commentary'
@@ -54,7 +54,7 @@ Plug 'junegunn/fzf.vim'
   command! -bang -nargs=* Ag
     \call fzf#vim#ag(<q-args>, ' --color-path="" -p ~/.ignore')
 
-  let $FZF_DEFAULT_OPTS .= ' --inline-info --border --reverse'
+  let $FZF_DEFAULT_OPTS .= ' --inline-info --reverse'
   let g:fzf_colors =
   \ { 'fg':      ['fg', 'Normal'],
     \ 'bg':      ['bg', 'Normal'],
@@ -77,7 +77,7 @@ Plug 'SirVer/ultisnips'
 Plug 'airblade/vim-gitgutter'
   let g:gitgutter_signs = 0
 
-Plug 'jbadavis/vim-twiggy', {'on': ['Twiggy'], 'branch': ['fix/fugitive-buffer-deprecated']}
+Plug 'sodapopcan/vim-twiggy', {'on': ['Twiggy'] }
   let g:twiggy_local_branch_sort = 'mru'
   let g:twiggy_group_locals_by_slash = 0
   let g:twiggy_num_columns = 50
