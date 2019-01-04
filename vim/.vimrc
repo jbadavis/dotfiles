@@ -7,7 +7,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 Plug 'ervandew/supertab'
-Plug 'jreybert/vimagit', { 'on': 'Magit' }
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-slash'
