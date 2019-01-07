@@ -25,6 +25,7 @@ Plug 'markonm/traces.vim'
 Plug 'prettier/vim-prettier'
 Plug 'rstacruz/vim-closer'
 Plug 'sheerun/vim-polyglot'
+Plug 'enricobacis/vim-airline-clock'
 
 Plug 'w0ng/vim-hybrid'
 Plug 'rakr/vim-two-firewatch'
@@ -158,8 +159,7 @@ nnoremap <leader><bar> :sp<CR>
 
 nnoremap <silent><leader>gb :Twiggy<CR>
 nnoremap <silent><leader>gl :GV<CR>
-nnoremap <silent><leader>gc :Commits<CR>
-nnoremap <silent><leader>gs :Gstatus<CR>
+nnoremap <silent><leader>gs :G<CR>
 
 nnoremap <silent><leader>an :ALENext<CR>
 nnoremap <silent><leader>ap :ALEPrevious<CR>
