@@ -22,7 +22,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'lambdalisue/gina.vim'
 Plug 'markonm/traces.vim'
 Plug 'prettier/vim-prettier'
-Plug 'rstacruz/vim-closer'
 Plug 'sheerun/vim-polyglot'
 
 Plug 'w0ng/vim-hybrid'
@@ -69,9 +68,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'SirVer/ultisnips'
   let g:UltiSnipsSnippetDir = "~/.vim/snippets/"
   let g:UltiSnipsSnippetDirectories = ['~/.vim/ultiSnips', 'UltiSnips']
-
-Plug 'airblade/vim-gitgutter'
-  let g:gitgutter_signs = 0
 
 Plug 'sodapopcan/vim-twiggy', {'on': ['Twiggy'] }
   let g:twiggy_local_branch_sort = 'mru'
