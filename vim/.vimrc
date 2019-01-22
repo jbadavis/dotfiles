@@ -46,9 +46,6 @@ Plug 'junegunn/fzf.vim'
   autocmd  FileType fzf set laststatus=0 noruler
     \| autocmd BufLeave <buffer> set laststatus=2 ruler
 
-  command! -bang -nargs=* Ag
-    \call fzf#vim#ag(<q-args>, ' --color-path="" -p ~/.ignore')
-
   let $FZF_DEFAULT_OPTS .= ' --inline-info --reverse'
   let g:fzf_colors =
   \ { 'fg':      ['fg', 'Normal'],
@@ -93,7 +90,6 @@ let g:nord_comment_brightness = 12
 set nocompatible
 set autoindent
 set autoread
-set backspace=indent,eol,start
 set clipboard=unnamed
 set cmdheight=2
 set expandtab
@@ -109,7 +105,6 @@ set smartindent
 set softtabstop=2
 set splitbelow
 set splitright
-set statusline+=%F
 set undofile
 set updatetime=100
 set wildignore+=/node_modules/**
