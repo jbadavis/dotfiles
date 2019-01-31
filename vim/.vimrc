@@ -70,6 +70,7 @@ Plug 'sodapopcan/vim-twiggy', {'on': ['Twiggy'] }
   let g:twiggy_local_branch_sort = 'mru'
   let g:twiggy_group_locals_by_slash = 0
   let g:twiggy_num_columns = 50
+  let g:twiggy_show_full_ui = 0
 
 call plug#end()
 
@@ -116,6 +117,9 @@ set timeoutlen=1000
 set ttimeoutlen=0
 set noswapfile
 
+set hidden
+set completeopt=longest,menuone
+
 set backupdir=~/.vim/tmp/backup//
 set undodir=~/.vim/tmp/undo//
 
@@ -146,7 +150,7 @@ nnoremap <leader><bar> :sp<CR>
 
 nnoremap <silent><leader>gb :Twiggy<CR>
 nnoremap <silent><leader>gl :GV<CR>
-nnoremap <silent><leader>gs :G<CR>
+nnoremap <silent><leader>gs :G<CR> :tabnew %<CR>
 
 nnoremap <silent><leader>an :ALENext<CR>
 nnoremap <silent><leader>ap :ALEPrevious<CR>
