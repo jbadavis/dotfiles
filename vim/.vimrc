@@ -23,6 +23,7 @@ Plug 'lambdalisue/gina.vim'
 Plug 'markonm/traces.vim'
 Plug 'prettier/vim-prettier'
 Plug 'sheerun/vim-polyglot'
+Plug 'vimwiki/vimwiki'
 
 Plug 'w0ng/vim-hybrid'
 Plug 'rakr/vim-two-firewatch'
