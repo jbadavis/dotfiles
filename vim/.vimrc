@@ -119,6 +119,8 @@ set noswapfile
 
 set hidden
 set completeopt=longest,menuone
+set smartcase
+set cursorline
 
 set backupdir=~/.vim/tmp/backup//
 set undodir=~/.vim/tmp/undo//
