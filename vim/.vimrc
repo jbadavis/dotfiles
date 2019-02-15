@@ -17,7 +17,6 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-haml'
-Plug 'tpope/vim-endwise'
 Plug 'vim-airline/vim-airline'
 Plug 'lambdalisue/gina.vim'
 Plug 'markonm/traces.vim'
@@ -37,8 +36,7 @@ Plug 'w0rp/ale'
       \   'scss': [],
       \}
   let g:ale_fix_on_save = 1
-  " let g:ale_lint_on_text_changed = 'never'
-  let g:ale_completion_enabled = 1
+  let g:ale_lint_on_text_changed = 'never'
 
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
