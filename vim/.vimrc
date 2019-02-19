@@ -30,21 +30,21 @@ Plug 'nightsense/snow'
 Plug 'jbadavis/nord-vim', { 'branch': 'develop' }
 
 Plug 'w0rp/ale'
-  let g:ale_fixers = {
-      \   'javascript': ['eslint'],
-      \   'css': [],
-      \   'scss': [],
-      \}
   let g:ale_fix_on_save = 1
   let g:ale_lint_on_text_changed = 'never'
+  let g:ale_fixers = {
+    \   'javascript': ['eslint'],
+    \   'css': [],
+    \   'scss': [],
+    \ }
 
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
   set rtp+=/usr/local/opt/fzf
 
   let $FZF_DEFAULT_OPTS .= ' --inline-info --reverse'
-  let g:fzf_colors =
-  \ { 'fg':      ['fg', 'Normal'],
+  let g:fzf_colors = { 
+    \ 'fg':      ['fg', 'Normal'],
     \ 'bg':      ['bg', 'Normal'],
     \ 'hl':      ['fg', 'Comment'],
     \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
@@ -56,7 +56,8 @@ Plug 'junegunn/fzf.vim'
     \ 'pointer': ['fg', 'Exception'],
     \ 'marker':  ['fg', 'Keyword'],
     \ 'spinner': ['fg', 'Label'],
-    \ 'header':  ['fg', 'Comment'] }
+    \ 'header':  ['fg', 'Comment'] 
+    \ }
 
 Plug 'SirVer/ultisnips'
   let g:UltiSnipsSnippetDir = "~/.vim/snippets/"
