@@ -43,7 +43,10 @@ Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
   set rtp+=/usr/local/opt/fzf
 
+  autocmd! User FzfStatusLine setlocal statusline=fzf\ 🦆
+
   let $FZF_DEFAULT_OPTS .= ' --inline-info --reverse'
+  let g:fzf_layout = { 'window': '10split' }
   let g:fzf_colors = { 
     \ 'fg':      ['fg', 'Normal'],
     \ 'bg':      ['bg', 'Normal'],
@@ -81,10 +84,6 @@ if has("gui_running")
   set guioptions=
   set macligatures
   set gfn=Fira\ Code\ Retina:h12
-
-  autocmd! User FzfStatusLine setlocal statusline=fzf\ 🦆
-
-  let g:fzf_layout = { 'window': '10split' }
 endif
 
 colo nord
