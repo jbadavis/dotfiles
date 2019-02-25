@@ -17,6 +17,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-haml'
+Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
 Plug 'lambdalisue/gina.vim'
 Plug 'markonm/traces.vim'
@@ -83,7 +84,7 @@ if has("gui_running")
 
   autocmd! User FzfStatusLine setlocal statusline=fzf\ 🦆
 
-  let g:fzf_layout = { 'window': '10split enew' }
+  let g:fzf_layout = { 'window': '10split' }
 endif
 
 colo nord
