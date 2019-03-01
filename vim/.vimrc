@@ -24,7 +24,6 @@ Plug 'markonm/traces.vim'
 Plug 'prettier/vim-prettier'
 Plug 'sheerun/vim-polyglot'
 Plug 'vimwiki/vimwiki'
-Plug 'machakann/vim-highlightedyank'
 
 Plug 'w0ng/vim-hybrid'
 Plug 'rakr/vim-two-firewatch'
@@ -48,7 +47,7 @@ Plug 'junegunn/fzf.vim'
 
   let $FZF_DEFAULT_OPTS .= ' --inline-info --reverse'
   let g:fzf_layout = { 'window': '10split' }
-  let g:fzf_colors = { 
+  let g:fzf_colors = {
     \ 'fg':      ['fg', 'Normal'],
     \ 'bg':      ['bg', 'Normal'],
     \ 'hl':      ['fg', 'Comment'],
@@ -73,6 +72,9 @@ Plug 'sodapopcan/vim-twiggy', {'on': ['Twiggy'] }
   let g:twiggy_group_locals_by_slash = 0
   let g:twiggy_num_columns = 50
   let g:twiggy_show_full_ui = 0
+
+Plug 'machakann/vim-highlightedyank'
+  let g:highlightedyank_highlight_duration = 2000
 
 call plug#end()
 
