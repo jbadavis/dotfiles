@@ -7,7 +7,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 Plug 'ervandew/supertab'
-Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-slash'
 Plug 'tpope/vim-commentary'
@@ -28,8 +27,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'w0ng/vim-hybrid'
 Plug 'rakr/vim-two-firewatch'
 Plug 'nightsense/snow'
-Plug 'jbadavis/nord-vim', { 'branch': 'develop' }
-
+Plug 'arcticicestudio/nord-vim'
 Plug 'w0rp/ale'
   let g:ale_fix_on_save = 1
   let g:ale_lint_on_text_changed = 'never'
@@ -60,7 +58,7 @@ Plug 'junegunn/fzf.vim'
     \ 'pointer': ['fg', 'Exception'],
     \ 'marker':  ['fg', 'Keyword'],
     \ 'spinner': ['fg', 'Label'],
-    \ 'header':  ['fg', 'Comment'] 
+    \ 'header':  ['fg', 'Comment']
     \ }
 
 Plug 'SirVer/ultisnips'
@@ -76,6 +74,9 @@ Plug 'sodapopcan/vim-twiggy', {'on': ['Twiggy'] }
 Plug 'machakann/vim-highlightedyank'
   let g:highlightedyank_highlight_duration = 2000
 
+Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+  let g:goyo_width = 120
+
 call plug#end()
 
 if has("termguicolors")
@@ -85,12 +86,10 @@ endif
 if has("gui_running")
   set vb t_vb=
   set guioptions=
-  set macligatures
-  set gfn=Fira\ Code\ Retina:h12
+  set gfn=Fira\ Code\ Retina:h14
 endif
 
 colo nord
-let g:nord_comment_brightness = 12
 
 set nocompatible
 set autoindent
@@ -137,7 +136,7 @@ filetype plugin on
 
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType gitcommit setlocal spell spelllang=en
-autocmd FileType markdown,tex,latex setlocal spell spelllang=en linebreak wrap
+autocmd FileType markdown,tex,latex,vimwiki setlocal spell spelllang=en linebreak wrap
 
 nnoremap <Tab> :Buffers<CR>
 nnoremap <silent><leader>p :GFiles<CR>
@@ -146,20 +145,21 @@ nnoremap <silent> <leader>- :Files <C-r>=expand("%:h")<CR>/<CR>
 nnoremap <silent> <Leader>s :Rg <C-R><C-W><CR>
 nnoremap <silent><leader>S :Rg<CR>
 nnoremap <leader>d :ALEGoToDefinition<CR>
-nnoremap <leader>D :cd ~/Git/asos-web-
+nnoremap <leader>D :cd ~/Git/
 
-nnoremap <F6> :Goyo<CR>
+nnoremap <silent><F6> :Goyo<CR>
 
-nnoremap <silent><leader>' :term<CR>
+nnoremap <silent><leader>' :vertical :term<CR>
 nnoremap <leader>\ :vsp<CR>
 nnoremap <leader><bar> :sp<CR>
 
 nnoremap <silent><leader>gb :Twiggy<CR>
 nnoremap <silent><leader>gl :GV<CR>
-nnoremap <silent><leader>gs :G<CR> :tabnew %<CR>
+nnoremap <silent><leader>gs :vertical :G<CR>
 
 nnoremap <silent><leader>an :ALENext<CR>
 nnoremap <silent><leader>ap :ALEPrevious<CR>
 
-nnoremap <leader>R :source ~/.vimrc<CR> :PlugInstall<CR>
+nnoremap <silent><leader>P :Prettier<CR>
 
+nnoremap <leader>R :source ~/.vimrc<CR> :PlugInstall<CR>
