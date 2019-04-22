@@ -1,8 +1,8 @@
-export ZSH=/Users/jack.davis/.oh-my-zsh
+export ZSH=/Users/jackdavis/.oh-my-zsh
 
 ZSH_THEME="jack"
 
-plugins=(git, vi-mode)
+plugins=(git vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -37,7 +37,6 @@ export CDPATH=.:~/Git
 export KEYTIMEOUT=1
 
 alias ag='ag -p ~/.ignore'
-alias vim='/usr/local/Cellar/macvim/8.1-149/MacVim.app/Contents/bin/vim'
 alias ls="ls -lrthaG"
 
 path
