@@ -17,7 +17,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-haml'
 Plug 'tpope/vim-unimpaired'
-Plug 'vim-airline/vim-airline'
 Plug 'lambdalisue/gina.vim'
 Plug 'markonm/traces.vim'
 Plug 'prettier/vim-prettier'
@@ -134,6 +133,54 @@ syntax on
 
 filetype plugin on
 
+function! ToggleTabSpacing()
+  if &l:tabstop == 4
+    set tabstop=2
+    set shiftwidth=2
+
+    let g:prettier#config#tab_width=2
+  else
+    set tabstop=4
+    set shiftwidth=4
+
+    let g:prettier#config#tab_width=4
+  endif
+endfunction
+
+nnoremap <silent><F5> :call ToggleTabSpacing()<CR>
+
+function! GetStatusLineMode()
+  return {
+    \ '__' : '------',
+    \ 'c'  : 'COMMAND',
+    \ 'i'  : 'INSERT',
+    \ 'ic' : 'INSERT COMPL',
+    \ 'ix' : 'INSERT COMPL',
+    \ 'n'  : 'NORMAL',
+    \ 'ni' : '(INSERT)',
+    \ 'no' : 'OP PENDING',
+    \ 'R'  : 'REPLACE',
+    \ 'Rv' : 'V REPLACE',
+    \ 's'  : 'SELECT',
+    \ 'S'  : 'S-LINE',
+    \ '' : 'S-BLOCK',
+    \ 't'  : 'TERMINAL',
+    \ 'v'  : 'VISUAL',
+    \ 'V'  : 'V-LINE',
+    \ '' : 'V-BLOCK',
+    \ }[mode()]
+endfunction
+
+set statusline=\ 
+set statusline+=%{GetStatusLineMode()}
+set statusline+=\ 
+set statusline+=%.20F
+set statusline+=\ 
+set statusline+=%= 
+set statusline+=%{FugitiveStatusline()} 
+set statusline+=\ 
+set statusline+=%y 
+
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType gitcommit setlocal spell spelllang=en
 autocmd FileType markdown,tex,latex,vimwiki setlocal spell spelllang=en linebreak wrap
@@ -163,3 +210,4 @@ nnoremap <silent><leader>ap :ALEPrevious<CR>
 nnoremap <silent><leader>P :Prettier<CR>
 
 nnoremap <leader>R :source ~/.vimrc<CR> :PlugInstall<CR>
+
