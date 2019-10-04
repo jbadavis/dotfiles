@@ -227,10 +227,11 @@ nnoremap <silent><leader>gb :Twiggy<CR>
 nnoremap <silent><leader>gl :GV<CR>
 nnoremap <silent><leader>gs :vertical :G<CR>
 
-nnoremap <silent><leader>an :ALENext<CR>
-nnoremap <silent><leader>ap :ALEPrevious<CR>
-
 nnoremap <silent><leader>P :Prettier<CR>
 
-nnoremap <leader>R :source ~/.vimrc<CR> :PlugInstall<CR>
+nnoremap <silent><leader>t :Tags<CR>
 
+nnoremap <leader>rr :source ~/.vimrc<CR> 
+nnoremap <leader>rp :source ~/.vimrc<CR> :PlugInstall<CR>
+
+nnoremap <leader>W :%s/\s\+$//e<CR>
