@@ -7,35 +7,46 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 Plug 'ervandew/supertab'
+
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-slash'
+
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-haml'
-Plug 'tpope/vim-unimpaired'
-Plug 'lambdalisue/gina.vim'
-Plug 'markonm/traces.vim'
-Plug 'prettier/vim-prettier'
-Plug 'sheerun/vim-polyglot'
-Plug 'vimwiki/vimwiki'
-Plug 'stefandtw/quickfix-reflector.vim'
+Plug 'tpope/vim-sleuth'
 
-Plug 'w0ng/vim-hybrid'
-Plug 'rakr/vim-two-firewatch'
-Plug 'nightsense/snow'
+Plug 'vimwiki/vimwiki'
+
+Plug 'markonm/traces.vim'
+Plug 'chip/vim-fat-finger'
+Plug 'stefandtw/quickfix-reflector.vim'
+Plug 'jiangmiao/auto-pairs'
+
 Plug 'arcticicestudio/nord-vim'
+Plug 'gruvbox-community/gruvbox'
+Plug 'flazz/vim-colorschemes'
+
+Plug 'sheerun/vim-polyglot'
+  let g:polyglot_disabled = ['javascript']
+Plug 'othree/yajs.vim'
+
 Plug 'w0rp/ale'
+  set omnifunc=ale#completion#OmniFunc
+
   let g:ale_fix_on_save = 1
-  let g:ale_lint_on_text_changed = 'never'
+  let g:ale_lint_on_text_changed = 0
+  let g:ale_lint_on_insert_leave = 0
+  let g:ale_lint_on_enter = 0
   let g:ale_fixers = {
     \   'javascript': ['eslint'],
     \   'css': [],
     \   'scss': [],
     \ }
+  let g:ale_completion_enabled = 0
 
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -43,8 +54,7 @@ Plug 'junegunn/fzf.vim'
 
   autocmd! User FzfStatusLine setlocal statusline=fzf\ 🦆
 
-  let $FZF_DEFAULT_OPTS .= ' --inline-info --reverse'
-  let g:fzf_layout = { 'window': '10split' }
+  let g:fzf_layout = { 'window': '20new' }
   let g:fzf_colors = {
     \ 'fg':      ['fg', 'Normal'],
     \ 'bg':      ['bg', 'Normal'],
@@ -76,6 +86,12 @@ Plug 'machakann/vim-highlightedyank'
 
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
   let g:goyo_width = 120
+
+Plug 'prettier/vim-prettier'
+
+Plug 'rhysd/clever-f.vim'
+  map ; <Plug>(clever-f-repeat-forward)
+  map , <Plug>(clever-f-repeat-back)
 
 call plug#end()
 
