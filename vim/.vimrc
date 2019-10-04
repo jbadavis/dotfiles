@@ -140,6 +140,7 @@ set hidden
 set completeopt=longest,menuone
 set smartcase
 set cursorline
+set grepprg=rg\ -S\ --vimgrep
 
 set backupdir=~/.vim/tmp/backup//
 set undodir=~/.vim/tmp/undo//
