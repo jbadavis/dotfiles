@@ -176,6 +176,7 @@ function! GetStatusLineMode()
     \ 'n'  : 'NORMAL',
     \ 'ni' : '(INSERT)',
     \ 'no' : 'OP PENDING',
+    \ 'r'  : 'REPLACE',
     \ 'R'  : 'REPLACE',
     \ 'Rv' : 'V REPLACE',
     \ 's'  : 'SELECT',
@@ -191,24 +192,28 @@ endfunction
 set statusline=\ 
 set statusline+=%{GetStatusLineMode()}
 set statusline+=\ 
-set statusline+=%.20F
+set statusline+=%.30F
 set statusline+=\ 
-set statusline+=%= 
-set statusline+=%{FugitiveStatusline()} 
-set statusline+=\ 
-set statusline+=%y 
+set statusline+=%=
+set statusline+=%y
 
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType gitcommit setlocal spell spelllang=en
 autocmd FileType markdown,tex,latex,vimwiki setlocal spell spelllang=en linebreak wrap
+autocmd! User FzfStatusLine setlocal statusline=fzf\ 🦆
+autocmd QuickFixCmdPost grep nested cwindow
+
+nnoremap <silent> <leader>- :Files <C-r>=expand("%:h")<CR>/<CR>
 
 nnoremap <Tab> :Buffers<CR>
 nnoremap <silent><leader>p :GFiles<CR>
-nnoremap <silent> <leader>- :Files <C-r>=expand("%:h")<CR>/<CR>
 
-nnoremap <silent> <Leader>s :Rg <C-R><C-W><CR>
+nnoremap <silent> <Leader>s :grep <C-R><C-W><CR>
 nnoremap <silent><leader>S :Rg<CR>
-nnoremap <leader>d :ALEGoToDefinition<CR>
+
+nnoremap <leader>dd :ALEGoToDefinition<CR>
+nnoremap <leader>dv :ALEGoToDefinitionInVSplit<CR>
+nnoremap <leader>ds :ALEGoToDefinitionInSplit<CR>
+
 nnoremap <leader>D :cd ~/Git/
 
 nnoremap <silent><F6> :Goyo<CR>
