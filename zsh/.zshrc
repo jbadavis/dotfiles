@@ -38,6 +38,8 @@ export KEYTIMEOUT=1
 
 alias ag='ag -p ~/.ignore'
 alias ls="ls -lrthaG"
+alias ni="npm install"
+alias nr="npm run "
 
 path
 init_fzf
