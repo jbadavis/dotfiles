@@ -25,6 +25,7 @@ Plug 'markonm/traces.vim'
 Plug 'chip/vim-fat-finger'
 Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'liuchengxu/vim-clap'
 
 Plug 'arcticicestudio/nord-vim'
 Plug 'gruvbox-community/gruvbox'
@@ -205,7 +206,7 @@ autocmd QuickFixCmdPost grep nested cwindow
 
 nnoremap <silent> <leader>- :Files <C-r>=expand("%:h")<CR>/<CR>
 
-nnoremap <Tab> :Buffers<CR>
+nnoremap <Tab> :Clap buffers<CR>
 nnoremap <silent><leader>p :GFiles<CR>
 
 nnoremap <silent> <Leader>s :grep <C-R><C-W><CR>
