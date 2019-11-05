@@ -199,7 +199,7 @@ set statusline+=\
 set statusline+=%=
 set statusline+=%y
 
-autocmd FileType gitcommit setlocal spell spelllang=en
+autocmd FileType gitcommit setlocal spell spelllang=en colorcolumn=72
 autocmd FileType markdown,tex,latex,vimwiki setlocal spell spelllang=en linebreak wrap
 autocmd! User FzfStatusLine setlocal statusline=fzf\ 🦆
 autocmd QuickFixCmdPost grep nested cwindow
