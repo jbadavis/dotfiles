@@ -32,16 +32,15 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'flazz/vim-colorschemes'
 
 Plug 'sheerun/vim-polyglot'
-  let g:polyglot_disabled = ['javascript']
-Plug 'othree/yajs.vim'
 
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
   set omnifunc=ale#completion#OmniFunc
 
   let g:ale_fix_on_save = 1
   let g:ale_lint_on_text_changed = 0
   let g:ale_lint_on_insert_leave = 0
   let g:ale_lint_on_enter = 0
+  let g:ale_linters = {'javascript': ['eslint', 'flow']}
   let g:ale_fixers = {
     \   'javascript': ['eslint'],
     \   'css': [],
