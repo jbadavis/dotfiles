@@ -26,6 +26,7 @@ Plug 'chip/vim-fat-finger'
 Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'liuchengxu/vim-clap'
+Plug 'prettier/vim-prettier'
 
 Plug 'arcticicestudio/nord-vim'
 Plug 'gruvbox-community/gruvbox'
@@ -87,11 +88,12 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
   let g:goyo_width = 120
 
-Plug 'prettier/vim-prettier'
-
 Plug 'rhysd/clever-f.vim'
   map ; <Plug>(clever-f-repeat-forward)
   map , <Plug>(clever-f-repeat-back)
+
+Plug 'janko/vim-test'
+  let test#strategy = "vimterminal"
 
 call plug#end()
 
@@ -229,9 +231,7 @@ nnoremap <silent><leader>gs :vertical :G<CR>
 
 nnoremap <silent><leader>P :Prettier<CR>
 
-nnoremap <silent><leader>t :Tags<CR>
-
 nnoremap <leader>rr :source ~/.vimrc<CR> 
 nnoremap <leader>rp :source ~/.vimrc<CR> :PlugInstall<CR>
 
-nnoremap <leader>W :%s/\s\+$//e<CR>
+nnoremap <silent><leader>tf :TestFile<CR>
