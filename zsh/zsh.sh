@@ -19,7 +19,7 @@ function init_fzf {
 
 function path {
   export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-  export PATH=~/Library/Python/3.6/bin/:$PATH
+  export PATH=~/Library/Python/3.7/bin/:$PATH
 
   # Setting PATH for Python 3.6
   # The original version is saved in .zprofile.pysave
