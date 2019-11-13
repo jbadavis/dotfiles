@@ -107,67 +107,44 @@ if has("gui_running")
   set gfn=Fira\ Code\ Retina:h14
 endif
 
+syntax on
+filetype plugin on
+
 colo nord
 
-set nocompatible
 set autoindent
 set autoread
+set background=dark
 set clipboard=unnamed
 set cmdheight=2
+set completeopt=longest,menuone
+set cursorline
 set expandtab
+set fillchars=vert:\│
+set grepprg=rg\ -S\ --vimgrep
+set hidden
 set incsearch
 set laststatus=2
 set linespace=2
+set nobackup
+set nocompatible
+set noshowmode
 set nostartofline
+set noswapfile
 set nowrap
-set ruler
 set scrolloff=2
-set shiftwidth=2
+set smartcase
 set smartindent
-set softtabstop=2
 set splitbelow
 set splitright
+set timeoutlen=1000
+set ttimeoutlen=0
+set undodir=~/.vim/tmp/undo//
 set undofile
 set updatetime=100
 set wildignore+=/node_modules/**
 set wildmenu
 set wildmode=longest:list,full
-set noshowmode
-set background=dark
-set timeoutlen=1000
-set ttimeoutlen=0
-set noswapfile
-
-set hidden
-set completeopt=longest,menuone
-set smartcase
-set cursorline
-set grepprg=rg\ -S\ --vimgrep
-
-set backupdir=~/.vim/tmp/backup//
-set undodir=~/.vim/tmp/undo//
-
-set fillchars=vert:\│
-
-syntax on
-
-filetype plugin on
-
-function! ToggleTabSpacing()
-  if &l:tabstop == 4
-    set tabstop=2
-    set shiftwidth=2
-
-    let g:prettier#config#tab_width=2
-  else
-    set tabstop=4
-    set shiftwidth=4
-
-    let g:prettier#config#tab_width=4
-  endif
-endfunction
-
-nnoremap <silent><F5> :call ToggleTabSpacing()<CR>
 
 function! GetStatusLineMode()
   return {
