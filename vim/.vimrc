@@ -41,7 +41,6 @@ Plug 'dense-analysis/ale'
   set omnifunc=ale#completion#OmniFunc
 
   let g:ale_fix_on_save = 1
-  " let g:ale_lint_on_text_changed = 0
   let g:ale_lint_on_insert_leave = 0
   let g:ale_lint_on_enter = 0
   let g:ale_linters = {'javascript': ['eslint', 'flow-language-server']}
@@ -207,7 +206,7 @@ nnoremap <leader>D :cd ~/Git/
 
 nnoremap <silent><F6> :Goyo<CR>
 
-nnoremap <silent><leader>' :vertical :term<CR>
+nnoremap <silent><leader>' :term<CR>
 nnoremap <leader>\ :vsp<CR>
 nnoremap <leader><bar> :sp<CR>
 
