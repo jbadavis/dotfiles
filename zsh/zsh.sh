@@ -41,6 +41,10 @@ alias ls="ls -lrthaG"
 alias ni="npm install"
 alias nr="npm run "
 
+alias cn="cargo new "
+alias cr="cargo run "
+alias ct="cargo test "
+
 path
 init_fzf
 nvm

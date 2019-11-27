@@ -41,10 +41,10 @@ Plug 'dense-analysis/ale'
   set omnifunc=ale#completion#OmniFunc
 
   let g:ale_fix_on_save = 1
-  let g:ale_lint_on_text_changed = 0
+  " let g:ale_lint_on_text_changed = 0
   let g:ale_lint_on_insert_leave = 0
   let g:ale_lint_on_enter = 0
-  let g:ale_linters = {'javascript': ['eslint', 'flow']}
+  let g:ale_linters = {'javascript': ['eslint', 'flow-language-server']}
   let g:ale_fixers = {
     \   'javascript': ['eslint'],
     \   'css': [],
@@ -97,6 +97,9 @@ Plug 'rhysd/clever-f.vim'
 
 Plug 'janko/vim-test'
   let test#strategy = "vimterminal"
+
+Plug 'racer-rust/vim-racer'
+  let g:racer_cmd = "/Users/jackdavis/.cargo/bin/racer"
 
 call plug#end()
 
@@ -215,3 +218,5 @@ nnoremap <leader>rr :source ~/.vimrc<CR>
 nnoremap <leader>rp :source ~/.vimrc<CR> :PlugInstall<CR>
 
 nnoremap <silent><leader>tf :TestFile<CR>
+
+nnoremap <silent><leader>rf :RustFmt<CR>
