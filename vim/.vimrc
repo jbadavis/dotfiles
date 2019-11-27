@@ -20,11 +20,14 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-sleuth'
 
 Plug 'vimwiki/vimwiki'
+  let wiki = {}
+  let wiki.path = '~/vimwiki/'
+  let wiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'rust': 'rust'}
+  let g:vimwiki_list = [wiki]
 
 Plug 'markonm/traces.vim'
 Plug 'chip/vim-fat-finger'
 Plug 'stefandtw/quickfix-reflector.vim'
-Plug 'jiangmiao/auto-pairs'
 Plug 'liuchengxu/vim-clap'
 Plug 'prettier/vim-prettier'
 
