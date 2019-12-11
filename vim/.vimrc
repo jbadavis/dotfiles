@@ -45,11 +45,14 @@ Plug 'dense-analysis/ale'
   let g:ale_lint_on_enter = 0
   let g:ale_linters = {'javascript': ['eslint', 'flow-language-server']}
   let g:ale_fixers = {
-    \   'javascript': ['eslint'],
     \   'css': [],
+    \   'javascript': ['eslint'],
+    \   'rust': ['rustfmt'],
     \   'scss': [],
     \ }
   let g:ale_completion_enabled = 0
+
+  let g:ale_rust_cargo_use_clippy = 1
 
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -123,6 +126,7 @@ let g:gruvbox_sign_column="bg0"
 set autoindent
 set autoread
 set background=dark
+set backspace=indent,eol,start
 set clipboard=unnamed
 set cmdheight=2
 set completeopt=longest,menuone
