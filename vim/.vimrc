@@ -28,7 +28,6 @@ Plug 'vimwiki/vimwiki'
 Plug 'markonm/traces.vim'
 Plug 'chip/vim-fat-finger'
 Plug 'stefandtw/quickfix-reflector.vim'
-Plug 'liuchengxu/vim-clap'
 Plug 'prettier/vim-prettier'
 
 Plug 'arcticicestudio/nord-vim'
@@ -196,7 +195,7 @@ autocmd QuickFixCmdPost grep nested cwindow
 
 nnoremap <silent> <leader>- :Files <C-r>=expand("%:h")<CR>/<CR>
 
-nnoremap <Tab> :Clap buffers<CR>
+nnoremap <Tab> :Buffers<CR>
 nnoremap <silent><leader>p :GFiles<CR>
 
 nnoremap <silent> <Leader>s :grep <C-R><C-W><CR>
