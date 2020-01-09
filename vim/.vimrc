@@ -22,7 +22,12 @@ Plug 'tpope/vim-sleuth'
 Plug 'vimwiki/vimwiki'
   let wiki = {}
   let wiki.path = '~/vimwiki/'
-  let wiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'rust': 'rust'}
+  let wiki.nested_syntaxes = {
+    \  'rust': 'rust',
+    \  'js': 'javascript',
+    \  'docker': 'Dockerfile',
+    \  'sh': 'sh'
+    \ }
   let g:vimwiki_list = [wiki]
 
 Plug 'markonm/traces.vim'
@@ -156,6 +161,8 @@ set updatetime=100
 set wildignore+=/node_modules/**
 set wildmenu
 set wildmode=longest:list,full
+
+set tabstop=4
 
 function! GetStatusLineMode()
   return {
