@@ -45,19 +45,24 @@ Plug 'sheerun/vim-polyglot'
 Plug 'dense-analysis/ale'
   set omnifunc=ale#completion#OmniFunc
 
+  let g:ale_completion_enabled = 0
   let g:ale_fix_on_save = 1
-  let g:ale_lint_on_insert_leave = 0
   let g:ale_lint_on_enter = 0
-  let g:ale_linters = {'javascript': ['eslint', 'flow-language-server']}
+  let g:ale_lint_on_insert_leave = 0
+  let g:ale_lint_on_text_changed = 0  
+  let g:ale_rust_cargo_use_clippy = 1
+
+  let g:ale_linters = {
+    \   'javascript': ['eslint', 'flow-language-server'],
+    \   'rust': ['cargo', 'rls', 'rustc']
+    \ }
+
   let g:ale_fixers = {
     \   'css': [],
     \   'javascript': ['eslint'],
     \   'rust': ['rustfmt'],
     \   'scss': [],
     \ }
-  let g:ale_completion_enabled = 0
-
-  let g:ale_rust_cargo_use_clippy = 1
 
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -104,9 +109,6 @@ Plug 'rhysd/clever-f.vim'
 
 Plug 'janko/vim-test'
   let test#strategy = "vimterminal"
-
-Plug 'racer-rust/vim-racer'
-  let g:racer_cmd = "/Users/jackdavis/.cargo/bin/racer"
 
 call plug#end()
 
@@ -209,9 +211,10 @@ nnoremap <silent><leader>p :GFiles<CR>
 nnoremap <silent> <Leader>s :grep <C-R><C-W><CR>
 nnoremap <silent><leader>S :Rg<CR>
 
-nnoremap <leader>dd :ALEGoToDefinition<CR>
-nnoremap <leader>dv :ALEGoToDefinitionInVSplit<CR>
-nnoremap <leader>ds :ALEGoToDefinitionInSplit<CR>
+nnoremap <silent><leader>aa :ALEGoToDefinition<CR>
+nnoremap <silent><leader>ad :ALEDetail<CR>
+nnoremap <silent><leader>av :ALEGoToDefinitionInVSplit<CR>
+nnoremap <silent><leader>as :ALEGoToDefinitionInSplit<CR>
 
 nnoremap <leader>D :cd ~/Git/
 
