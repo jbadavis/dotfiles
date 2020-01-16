@@ -34,6 +34,7 @@ Plug 'markonm/traces.vim'
 Plug 'chip/vim-fat-finger'
 Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'prettier/vim-prettier'
+Plug 'simnalamburt/vim-mundo'
 
 Plug 'arcticicestudio/nord-vim'
 Plug 'gruvbox-community/gruvbox'
@@ -232,3 +233,5 @@ nnoremap <leader>rp :source ~/.vimrc<CR> :PlugInstall<CR>
 nnoremap <silent><leader>tf :TestFile<CR>
 
 nnoremap <silent><leader>rf :RustFmt<CR>
+
+nnoremap <silent><leader>u :MundoToggle<CR>
