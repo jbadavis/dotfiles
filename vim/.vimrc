@@ -104,8 +104,8 @@ Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
   let g:goyo_width = 120
 
 Plug 'rhysd/clever-f.vim'
-  map ; <Plug>(clever-f-repeat-forward)
-  map , <Plug>(clever-f-repeat-back)
+  nnoremap ; <Plug>(clever-f-repeat-forward)
+  nnoremap , <Plug>(clever-f-repeat-back)
 
 Plug 'janko/vim-test'
   let test#strategy = "vimterminal"
@@ -123,7 +123,7 @@ if has("gui_running")
 endif
 
 syntax on
-filetype plugin on
+filetype plugin indent on
 
 colo nord
 
@@ -143,14 +143,12 @@ set incsearch
 set laststatus=2
 set linespace=2
 set nobackup
-set nocompatible
 set noshowmode
 set nostartofline
 set noswapfile
 set nowrap
 set scrolloff=2
 set smartcase
-set smartindent
 set splitbelow
 set splitright
 set timeoutlen=1000
@@ -164,7 +162,7 @@ set wildmode=longest:list,full
 
 set tabstop=4
 
-function! GetStatusLineMode()
+function! GetStatusLineMode() abort
   return {
     \ '__' : '------',
     \ 'c'  : 'COMMAND',
@@ -195,10 +193,13 @@ set statusline+=\
 set statusline+=%=
 set statusline+=%y
 
-autocmd FileType gitcommit setlocal spell spelllang=en colorcolumn=72
-autocmd FileType markdown,tex,latex,vimwiki setlocal spell spelllang=en linebreak wrap
-autocmd! User FzfStatusLine setlocal statusline=fzf\ 🦆
-autocmd QuickFixCmdPost grep nested cwindow
+augroup file_types
+  autocmd!
+  autocmd FileType gitcommit setlocal spell spelllang=en colorcolumn=72
+  autocmd FileType markdown,tex,latex,vimwiki setlocal spell spelllang=en linebreak wrap
+  autocmd! User FzfStatusLine setlocal statusline=fzf\ 🦆
+  autocmd QuickFixCmdPost grep nested cwindow
+augroup end
 
 nnoremap <silent> <leader>- :Files <C-r>=expand("%:h")<CR>/<CR>
 
