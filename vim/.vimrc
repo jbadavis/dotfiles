@@ -26,7 +26,8 @@ Plug 'vimwiki/vimwiki'
     \  'rust': 'rust',
     \  'js': 'javascript',
     \  'docker': 'Dockerfile',
-    \  'sh': 'sh'
+    \  'sh': 'sh',
+    \  'go': 'go',
     \ }
   let g:vimwiki_list = [wiki]
 
@@ -41,6 +42,7 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'flazz/vim-colorschemes'
 
 Plug 'sheerun/vim-polyglot'
+Plug 'fatih/vim-go'
 
 Plug 'dense-analysis/ale'
   set omnifunc=ale#completion#OmniFunc
@@ -55,8 +57,9 @@ Plug 'dense-analysis/ale'
   let g:ale_completion_tsserver_autoimport = 1
 
   let g:ale_linters = {
-    \   'javascript': ['eslint', 'flow-language-server'],
-    \   'rust': ['cargo', 'rls', 'rustc']
+    \   'javascript': ['eslint', 'tsserver'],
+    \   'rust': ['cargo', 'rls', 'rustc'],
+    \   'go': ['gofmt', 'govet', 'golint', 'gopls'],
     \ }
 
   let g:ale_fixers = {

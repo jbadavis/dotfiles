@@ -18,9 +18,13 @@ function init_fzf {
 }
 
 function path {
+  export PATH="$HOME/bin:$PATH"
   export PATH="$HOME/.cargo/bin:$PATH"
   export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
   export PATH=~/Library/Python/3.7/bin/:$PATH
+
+  export PATH="/usr/local/bin/go:$PATH"
+  export PATH="$HOME/go/bin:$PATH"
 
   # Setting PATH for Python 3.6
   # The original version is saved in .zprofile.pysave
