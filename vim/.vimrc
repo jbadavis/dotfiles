@@ -106,6 +106,7 @@ Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
   let g:goyo_width = 120
 
 Plug 'rhysd/clever-f.vim'
+  let g:clever_f_mark_char_color = "IncSearch"
   nnoremap ; <Plug>(clever-f-repeat-forward)
   nnoremap , <Plug>(clever-f-repeat-back)
 
