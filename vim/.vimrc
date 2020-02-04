@@ -166,7 +166,10 @@ set wildignore+=/node_modules/**
 set wildmenu
 set wildmode=longest:list,full
 
-set tabstop=4
+set tabstop=8
+set softtabstop=4
+set shiftwidth=4
+set expandtab
 
 function! GetStatusLineMode() abort
   return {
