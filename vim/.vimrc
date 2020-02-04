@@ -51,6 +51,8 @@ Plug 'dense-analysis/ale'
   let g:ale_lint_on_insert_leave = 0
   let g:ale_lint_on_text_changed = 0  
   let g:ale_rust_cargo_use_clippy = 1
+  let g:ale_change_sign_column_color = 1
+  let g:ale_completion_tsserver_autoimport = 1
 
   let g:ale_linters = {
     \   'javascript': ['eslint', 'flow-language-server'],
