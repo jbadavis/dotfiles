@@ -122,11 +122,6 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
   let g:goyo_width = 120
 
-Plug 'rhysd/clever-f.vim'
-  let g:clever_f_mark_char_color = "IncSearch"
-  nnoremap ; <Plug>(clever-f-repeat-forward)
-  nnoremap , <Plug>(clever-f-repeat-back)
-
 Plug 'janko/vim-test'
   let test#strategy = "vimterminal"
 
@@ -227,7 +222,7 @@ augroup end
 nnoremap <silent> <leader>- :Files <C-r>=expand("%:h")<CR>/<CR>
 
 nnoremap <Tab> :Buffers<CR>
-nnoremap <silent><leader>p :GFiles<CR>
+nnoremap <silent><leader>p :Files<CR>
 
 nnoremap <silent> <Leader>s :grep <C-R><C-W><CR>
 nnoremap <silent><leader>S :Rg<CR>
@@ -236,6 +231,7 @@ nnoremap <silent><leader>aa :ALEGoToDefinition<CR>
 nnoremap <silent><leader>ad :ALEDetail<CR>
 nnoremap <silent><leader>av :ALEGoToDefinitionInVSplit<CR>
 nnoremap <silent><leader>as :ALEGoToDefinitionInSplit<CR>
+nnoremap <silent><leader>ar :ALEFindReferences<CR>
 
 nnoremap <leader>D :cd ~/Git/
 
@@ -253,6 +249,7 @@ nnoremap <silent><leader>P :Prettier<CR>
 
 nnoremap <leader>rr :source ~/.vimrc<CR> 
 nnoremap <leader>rp :source ~/.vimrc<CR> :PlugInstall<CR>
+nnoremap <leader>ru :source ~/.vimrc<CR> :PlugUpdate<CR>
 
 nnoremap <silent><leader>tf :TestFile<CR>
 
