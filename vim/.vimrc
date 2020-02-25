@@ -88,8 +88,8 @@ Plug 'junegunn/fzf.vim'
   set rtp+=/usr/local/opt/fzf
 
   autocmd! User FzfStatusLine setlocal statusline=fzf\ 🦆
-
-  let g:fzf_layout = { 'window': '20new' }
+  
+  let g:fzf_layout = { 'window': { 'width': 0.5, 'height': 0.5, 'rounded': 1 } }
   let g:fzf_colors = {
     \ 'fg':      ['fg', 'Normal'],
     \ 'bg':      ['bg', 'Normal'],
