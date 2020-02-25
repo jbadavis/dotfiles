@@ -43,6 +43,19 @@ Plug 'flazz/vim-colorschemes'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'fatih/vim-go'
+  let g:go_term_mode = 'split'
+  let g:go_term_enabled = 1
+
+  let g:go_highlight_extra_types = 1
+  let g:go_highlight_function_calls = 1
+  let g:go_highlight_function_parameters = 1
+  let g:go_highlight_functions = 1
+  let g:go_highlight_operators = 1
+  let g:go_highlight_types = 1
+  let g:go_highlight_variable_assignments = 1
+
+  let g:go_fmt_command = "goimports"
+  let g:go_fmt_fail_silently = 1
 
 Plug 'dense-analysis/ale'
   set omnifunc=ale#completion#OmniFunc
@@ -67,6 +80,7 @@ Plug 'dense-analysis/ale'
     \   'javascript': ['eslint'],
     \   'rust': ['rustfmt'],
     \   'scss': [],
+    \   'go': ['gofmt'],
     \ }
 
 Plug 'junegunn/fzf', { 'do': './install --all' }
