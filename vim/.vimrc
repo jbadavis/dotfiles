@@ -35,11 +35,11 @@ Plug 'markonm/traces.vim'
 Plug 'chip/vim-fat-finger'
 Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'prettier/vim-prettier'
-Plug 'simnalamburt/vim-mundo'
 
 Plug 'arcticicestudio/nord-vim'
 Plug 'gruvbox-community/gruvbox'
-Plug 'flazz/vim-colorschemes'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'dracula/vim'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'fatih/vim-go'
@@ -121,9 +121,6 @@ Plug 'machakann/vim-highlightedyank'
 
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
   let g:goyo_width = 120
-
-Plug 'janko/vim-test'
-  let test#strategy = "vimterminal"
 
 call plug#end()
 
@@ -211,6 +208,8 @@ set statusline+=\
 set statusline+=%=
 set statusline+=%y
 
+hi statusline guibg=CornflowerBlue guifg=FloralWhite 
+
 augroup file_types
   autocmd!
   autocmd FileType gitcommit setlocal spell spelllang=en colorcolumn=72
@@ -232,6 +231,7 @@ nnoremap <silent><leader>ad :ALEDetail<CR>
 nnoremap <silent><leader>av :ALEGoToDefinitionInVSplit<CR>
 nnoremap <silent><leader>as :ALEGoToDefinitionInSplit<CR>
 nnoremap <silent><leader>ar :ALEFindReferences<CR>
+nnoremap <silent><leader>at :ALEGoToTypeDefinition<CR>
 
 nnoremap <leader>D :cd ~/Git/
 
