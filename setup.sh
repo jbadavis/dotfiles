@@ -1,3 +1,7 @@
+# Set these!
+EMAIL=
+GPG_KEY= 
+
 ROOT=~/Git/dotfiles
 
 function setup_vim {
@@ -27,11 +31,19 @@ function setup_nvm {
   npm i -g prettier typescript
 }
 
+function setup_git {
+  cp $ROOT/git/.gitignore ~/.gitignore
+
+  git config --global user.email $EMAIL
+  git config --global user.signingkey $GPG_KEY
+}
+
 function setup {
   setup_vim
   setup_zsh
   setup_brew
   setup_nvm
+  setup_git
 }
 
 setup

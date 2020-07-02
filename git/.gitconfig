@@ -1,0 +1,8 @@
+[user]
+	name = Jack Davis
+[core]
+	excludesfile = ~/.config/.gitignore
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
