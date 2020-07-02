@@ -15,7 +15,7 @@ function setup_zsh {
 function setup_brew {
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   
-  brew install fd hub ripgrep
+  brew install fd hub ripgrep gnupg
   brew install vim --HEAD
 }
 

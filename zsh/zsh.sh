@@ -40,6 +40,7 @@ function nvm {
 export TERM='xterm-256color'
 export CDPATH=.:~/Git
 export KEYTIMEOUT=1
+export GPG_TTY=$(tty)
 
 alias ag='ag -p ~/.ignore'
 alias ls="ls -lrthaG"
