@@ -2,7 +2,7 @@ export ZSH=/Users/jackdavis/.oh-my-zsh
 
 ZSH_THEME="jack"
 
-plugins=(git vi-mode)
+plugins=(git vi-mode gpg-agent)
 
 source $ZSH/oh-my-zsh.sh
 

@@ -137,7 +137,7 @@ endif
 syntax on
 filetype plugin indent on
 
-colo nord
+colo palenight
 
 set autoindent
 set autoread
