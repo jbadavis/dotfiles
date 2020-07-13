@@ -227,9 +227,9 @@ nnoremap <silent> <Leader>s :grep <C-R><C-W><CR>
 nnoremap <silent><leader>S :Rg<CR>
 
 nnoremap <silent><leader>aa :ALEGoToDefinition<CR>
+nnoremap <silent><leader>av :ALEGoToDefinition -vsplit<CR>
+nnoremap <silent><leader>as :ALEGoToDefinition -split<CR>
 nnoremap <silent><leader>ad :ALEDetail<CR>
-nnoremap <silent><leader>av :ALEGoToDefinitionInVSplit<CR>
-nnoremap <silent><leader>as :ALEGoToDefinitionInSplit<CR>
 nnoremap <silent><leader>ar :ALEFindReferences<CR>
 nnoremap <silent><leader>at :ALEGoToTypeDefinition<CR>
 
