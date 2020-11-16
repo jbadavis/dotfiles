@@ -65,18 +65,24 @@ Plug 'dense-analysis/ale'
   let g:ale_lint_on_enter = 0
   let g:ale_lint_on_insert_leave = 0
   let g:ale_lint_on_text_changed = 0  
+
   let g:ale_rust_cargo_use_clippy = 1
+  let g:ale_rust_cargo_use_check = 1 
+
   let g:ale_change_sign_column_color = 1
   let g:ale_completion_tsserver_autoimport = 1
 
   let g:ale_linters = {
+    \   'typescript': ['eslint', 'tsserver'],
     \   'javascript': ['eslint', 'tsserver'],
     \   'rust': ['cargo', 'rls', 'rustc'],
     \   'go': ['gofmt', 'govet', 'golint', 'gopls'],
     \ }
 
+let g:ale_rust_rls_toolchain = ''
   let g:ale_fixers = {
     \   'css': [],
+    \   'typescript': ['eslint'],
     \   'javascript': ['eslint'],
     \   'rust': ['rustfmt'],
     \   'scss': [],
