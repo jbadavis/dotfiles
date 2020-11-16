@@ -212,7 +212,8 @@ set statusline+=\
 set statusline+=%.30F
 set statusline+=\ 
 set statusline+=%=
-set statusline+=%y
+set statusline+=%y\  
+set statusline+=%{strftime('%H:%M')}
 
 hi statusline guibg=CornflowerBlue guifg=FloralWhite 
 
