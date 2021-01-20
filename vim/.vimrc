@@ -21,7 +21,7 @@ Plug 'tpope/vim-sleuth'
 
 Plug 'vimwiki/vimwiki'
   let wiki = {}
-  let wiki.path = '~/vimwiki/'
+  let g:vimwiki_list = [{'path': '~/wiki/', 'syntax': 'markdown'}]
   let wiki.nested_syntaxes = {
     \  'rust': 'rust',
     \  'js': 'javascript',
@@ -29,7 +29,6 @@ Plug 'vimwiki/vimwiki'
     \  'sh': 'sh',
     \  'go': 'go',
     \ }
-  let g:vimwiki_list = [wiki]
 
 Plug 'markonm/traces.vim'
 Plug 'chip/vim-fat-finger'
@@ -70,7 +69,7 @@ Plug 'dense-analysis/ale'
   let g:ale_rust_cargo_use_check = 1 
 
   let g:ale_change_sign_column_color = 1
-  let g:ale_completion_tsserver_autoimport = 1
+  let g:ale_completion_autoimport = 1
 
   let g:ale_linters = {
     \   'typescript': ['eslint', 'tsserver'],
