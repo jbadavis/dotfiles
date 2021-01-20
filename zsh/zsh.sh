@@ -1,13 +1,13 @@
 export ZSH=/Users/jackdavis/.oh-my-zsh
 
-ZSH_THEME="jack"
+export ZSH_THEME="jack"
 
-plugins=(git vi-mode gpg-agent)
+export plugins=(git gpg-agent)
 
 source $ZSH/oh-my-zsh.sh
 
-function init_fzf {
-  export FZF_DEFAULT_COMMAND="fd --type file --follow --hidden --exclude .git --color=always"
+init_fzf() {
+  export FZF_DEFAULT_COMMAND="fd --type file --follow --hidden --exclude .git"
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
   export FZF_DEFAULT_OPTS="--ansi --inline-info --layout=reverse"
 
@@ -15,9 +15,10 @@ function init_fzf {
 
   bindkey '^r' fzf-history-widget
   bindkey '^t' fzf-file-widget
+
 }
 
-function path {
+path() {
   export PATH="$HOME/bin:$PATH"
   export PATH="$HOME/.cargo/bin:$PATH"
   export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
@@ -31,7 +32,7 @@ function path {
   PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
 }
 
-function nvm {
+nvm() {
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -50,6 +51,8 @@ alias nr="npm run "
 alias cn="cargo new "
 alias cr="cargo run "
 alias ct="cargo test "
+
+bindkey -v
 
 path
 init_fzf

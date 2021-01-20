@@ -1,10 +1,14 @@
-# Set these!
-EMAIL=
-GPG_KEY= 
+#
+# Please set these!
+#
+
+NAME="your name"
+EMAIL="your email"
+GPG_KEY="your key id"
 
 ROOT=~/Git/dotfiles
 
-function setup_vim {
+setup_vim() {
   mkdir ~/.vim
   
   ln -s $ROOT/config ~/.config
@@ -13,38 +17,39 @@ function setup_vim {
   ln -s $ROOT/vim/UltiSnips ~/.vim/UltiSnips
 }
 
-function setup_zsh {
+setup_zsh() {
   echo "source ~/Git/dotfiles/zsh/zsh.sh" >> ~/.zshrc
 }
 
-function setup_brew {
+setup_brew() {
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   
   brew install fd hub ripgrep gnupg pinentry-mac
   brew install vim --HEAD
 }
 
-function setup_nvm {
+setup_node() {
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
   nvm install node
 
-  npm i -g prettier typescript
+  npm i -g prettier typescript yarn
 }
 
-function setup_git {
+setup_git() {
   cp $ROOT/git/.gitignore ~/.gitignore
 
-  git config --global user.email $EMAIL
-  git config --global user.signingkey $GPG_KEY
+  git config --global user.name "$NAME"
+  git config --global user.email "$EMAIL"
+  git config --global user.signingkey "$GPG_KEY"
 }
 
-function setup {
+setup() {
   setup_vim
   setup_zsh
   setup_brew
-  setup_nvm
   setup_git
+  setup_node
 }
 
 setup

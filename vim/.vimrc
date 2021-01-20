@@ -76,6 +76,7 @@ Plug 'dense-analysis/ale'
     \   'javascript': ['eslint', 'tsserver'],
     \   'rust': ['cargo', 'rls', 'rustc'],
     \   'go': ['gofmt', 'govet', 'golint', 'gopls'],
+    \   'sh': ['shellcheck'],
     \ }
 
 let g:ale_rust_rls_toolchain = ''

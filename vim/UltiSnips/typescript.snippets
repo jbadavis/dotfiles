@@ -26,6 +26,12 @@ describe('${1}', () => {
 });
 endsnippet
 
+snippet test "test('..." b
+test('${1}', () => {
+  ${2}
+});
+endsnippet
+
 snippet it "it('..." b
 it('${1}', () => {
   ${2}
@@ -76,5 +82,8 @@ const ${1} = ${2};
 export default ${1}
 endsnippet
 
-
-
+snippet in "interface" 
+interface ${1} {
+  ${2}
+}
+endsnippet
