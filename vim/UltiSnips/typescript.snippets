@@ -87,3 +87,14 @@ interface ${1} {
   ${2}
 }
 endsnippet
+
+snippet mocked "const mocked..." 
+const mocked${1} = mocked(${2});
+endsnippet
+
+snippet cam "clearAllMocks" 
+afterEach(() => {
+  jest.clearAllMocks();
+});
+endsnippet
+

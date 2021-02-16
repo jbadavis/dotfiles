@@ -74,6 +74,7 @@ Plug 'dense-analysis/ale'
   let g:ale_linters = {
     \   'typescript': ['eslint', 'tsserver'],
     \   'javascript': ['eslint', 'tsserver'],
+    \   'typescriptreact': ['eslint', 'tsserver'],
     \   'rust': ['cargo', 'rls', 'rustc'],
     \   'go': ['gofmt', 'govet', 'golint', 'gopls'],
     \   'sh': ['shellcheck'],
@@ -84,8 +85,8 @@ let g:ale_rust_rls_toolchain = ''
     \   'css': [],
     \   'typescript': ['eslint'],
     \   'javascript': ['eslint'],
+    \   'typescriptreact': ['eslint'],
     \   'rust': ['rustfmt'],
-    \   'scss': [],
     \   'go': ['gofmt'],
     \ }
 
@@ -179,8 +180,8 @@ set wildmenu
 set wildmode=longest:list,full
 
 set tabstop=8
-set softtabstop=4
-set shiftwidth=4
+set softtabstop=2
+set shiftwidth=2
 set expandtab
 
 function! GetStatusLineMode() abort
@@ -223,6 +224,7 @@ augroup file_types
   autocmd FileType markdown,tex,latex,vimwiki setlocal spell spelllang=en linebreak wrap
   autocmd! User FzfStatusLine setlocal statusline=fzf\ 🦆
   autocmd QuickFixCmdPost grep nested cwindow
+  autocmd BufEnter,BufNew *.tsx setf typescript.typescriptreact
 augroup end
 
 nnoremap <silent> <leader>- :Files <C-r>=expand("%:h")<CR>/<CR>
