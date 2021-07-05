@@ -64,12 +64,14 @@ Plug 'dense-analysis/ale'
   let g:ale_lint_on_enter = 0
   let g:ale_lint_on_insert_leave = 0
   let g:ale_lint_on_text_changed = 0  
+  let g:ale_change_sign_column_color = 1
+  let g:ale_completion_autoimport = 1
 
   let g:ale_rust_cargo_use_clippy = 1
   let g:ale_rust_cargo_use_check = 1 
+  let g:ale_rust_rls_toolchain = ''
 
-  let g:ale_change_sign_column_color = 1
-  let g:ale_completion_autoimport = 1
+  let g:ale_scss_sasslint_executable = "sasslint"
 
   let g:ale_linters = {
     \   'typescript': ['eslint', 'tsserver'],
@@ -80,7 +82,6 @@ Plug 'dense-analysis/ale'
     \   'sh': ['shellcheck'],
     \ }
 
-let g:ale_rust_rls_toolchain = ''
   let g:ale_fixers = {
     \   'css': [],
     \   'typescript': ['eslint'],
@@ -93,25 +94,8 @@ let g:ale_rust_rls_toolchain = ''
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
   set rtp+=/usr/local/opt/fzf
-
   autocmd! User FzfStatusLine setlocal statusline=fzf\ 🦆
-  
-  let g:fzf_layout = { 'window': { 'width': 0.5, 'height': 0.5, 'rounded': 1 } }
-  let g:fzf_colors = {
-    \ 'fg':      ['fg', 'Normal'],
-    \ 'bg':      ['bg', 'Normal'],
-    \ 'hl':      ['fg', 'Comment'],
-    \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-    \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-    \ 'hl+':     ['fg', 'Statement'],
-    \ 'info':    ['fg', 'PreProc'],
-    \ 'border':  ['fg', 'Ignore'],
-    \ 'prompt':  ['fg', 'Conditional'],
-    \ 'pointer': ['fg', 'Exception'],
-    \ 'marker':  ['fg', 'Keyword'],
-    \ 'spinner': ['fg', 'Label'],
-    \ 'header':  ['fg', 'Comment']
-    \ }
+  let g:fzf_layout = { 'window': { 'width': 0.5, 'height': 0.5 } }
 
 Plug 'SirVer/ultisnips'
   let g:UltiSnipsSnippetDir = "~/.vim/snippets/"
@@ -144,7 +128,7 @@ endif
 syntax on
 filetype plugin indent on
 
-colo palenight
+colo nord
 
 set autoindent
 set autoread
@@ -216,7 +200,7 @@ set statusline+=%=
 set statusline+=%y\  
 set statusline+=%{strftime('%H:%M')}
 
-hi statusline guibg=CornflowerBlue guifg=FloralWhite 
+" hi statusline guibg=CornflowerBlue guifg=FloralWhite 
 
 augroup file_types
   autocmd!
@@ -247,12 +231,22 @@ nnoremap <leader>D :cd ~/Git/
 nnoremap <silent><F6> :Goyo<CR>
 
 nnoremap <silent><leader>' :term<CR>
+
+nnoremap <silent><leader>td :term yarn dev<CR>
+nnoremap <silent><leader>tt :term yarn test<CR>
+nnoremap <silent><leader>tw :term yarn test:watch<CR>
+nnoremap <silent><leader>tv :term yarn validate<CR>
+
 nnoremap <leader>\ :vsp<CR>
 nnoremap <leader><bar> :sp<CR>
 
 nnoremap <silent><leader>gb :Twiggy<CR>
 nnoremap <silent><leader>gl :GV<CR>
 nnoremap <silent><leader>gs :vertical :G<CR>
+nnoremap <leader>gpf :G push origin --force-with-lease
+nnoremap <leader>gpo :G push origin
+nnoremap <leader>gpp :G push 
+nnoremap <leader>gco :G checkout -b 
 
 nnoremap <silent><leader>P :Prettier<CR>
 
