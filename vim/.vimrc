@@ -18,10 +18,11 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-abolish'
 
 Plug 'vimwiki/vimwiki'
   let wiki = {}
-  let g:vimwiki_list = [{'path': '~/wiki/', 'syntax': 'markdown'}]
+  let g:vimwiki_list = [{'path': '~/wiki/', 'syntax': 'markdown', 'ext': '.md'}]
   let wiki.nested_syntaxes = {
     \  'rust': 'rust',
     \  'js': 'javascript',
@@ -63,12 +64,12 @@ Plug 'dense-analysis/ale'
   let g:ale_fix_on_save = 1
   let g:ale_lint_on_enter = 0
   let g:ale_lint_on_insert_leave = 0
-  let g:ale_lint_on_text_changed = 0  
+  let g:ale_lint_on_text_changed = 0
   let g:ale_change_sign_column_color = 1
   let g:ale_completion_autoimport = 1
 
   let g:ale_rust_cargo_use_clippy = 1
-  let g:ale_rust_cargo_use_check = 1 
+  let g:ale_rust_cargo_use_check = 1
   let g:ale_rust_rls_toolchain = ''
 
   let g:ale_scss_sasslint_executable = "sasslint"
@@ -80,6 +81,7 @@ Plug 'dense-analysis/ale'
     \   'rust': ['cargo', 'rls', 'rustc'],
     \   'go': ['gofmt', 'govet', 'golint', 'gopls'],
     \   'sh': ['shellcheck'],
+    \   'markdown': ['mdl', 'writegood'],
     \ }
 
   let g:ale_fixers = {
@@ -89,6 +91,7 @@ Plug 'dense-analysis/ale'
     \   'typescriptreact': ['eslint'],
     \   'rust': ['rustfmt'],
     \   'go': ['gofmt'],
+    \   '*': ['remove_trailing_lines', 'trim_whitespace'],
     \ }
 
 Plug 'junegunn/fzf', { 'do': './install --all' }
@@ -191,16 +194,16 @@ function! GetStatusLineMode() abort
     \ }[mode()]
 endfunction
 
-set statusline=\ 
+set statusline=\
 set statusline+=%{GetStatusLineMode()}
-set statusline+=\ 
+set statusline+=\
 set statusline+=%.30F
-set statusline+=\ 
+set statusline+=\
 set statusline+=%=
-set statusline+=%y\  
+set statusline+=%y\
 set statusline+=%{strftime('%H:%M')}
 
-" hi statusline guibg=CornflowerBlue guifg=FloralWhite 
+" hi statusline guibg=CornflowerBlue guifg=FloralWhite
 
 augroup file_types
   autocmd!
@@ -208,7 +211,6 @@ augroup file_types
   autocmd FileType markdown,tex,latex,vimwiki setlocal spell spelllang=en linebreak wrap
   autocmd! User FzfStatusLine setlocal statusline=fzf\ 🦆
   autocmd QuickFixCmdPost grep nested cwindow
-  autocmd BufEnter,BufNew *.tsx setf typescript.typescriptreact
 augroup end
 
 nnoremap <silent> <leader>- :Files <C-r>=expand("%:h")<CR>/<CR>
@@ -245,12 +247,13 @@ nnoremap <silent><leader>gl :GV<CR>
 nnoremap <silent><leader>gs :vertical :G<CR>
 nnoremap <leader>gpf :G push origin --force-with-lease
 nnoremap <leader>gpo :G push origin
-nnoremap <leader>gpp :G push 
-nnoremap <leader>gco :G checkout -b 
+nnoremap <leader>gpp :G push
+nnoremap <leader>gco :G checkout -b
+nnoremap G :G
 
 nnoremap <silent><leader>P :Prettier<CR>
 
-nnoremap <leader>rr :source ~/.vimrc<CR> 
+nnoremap <leader>rr :source ~/.vimrc<CR>
 nnoremap <leader>rp :source ~/.vimrc<CR> :PlugInstall<CR>
 nnoremap <leader>ru :source ~/.vimrc<CR> :PlugUpdate<CR>
 
