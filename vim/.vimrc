@@ -40,6 +40,8 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'dracula/vim'
+Plug 'ajmwagar/vim-deus'
+Plug 'wadackel/vim-dogrun'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'fatih/vim-go'
@@ -228,7 +230,7 @@ nnoremap <silent><leader>ad :ALEDetail<CR>
 nnoremap <silent><leader>ar :ALEFindReferences<CR>
 nnoremap <silent><leader>at :ALEGoToTypeDefinition<CR>
 
-nnoremap <leader>D :cd ~/Git/
+nnoremap <leader>D :cd ~/Git/nandos-platform/lib/online-ordering-ui/<CR>
 
 nnoremap <silent><F6> :Goyo<CR>
 
