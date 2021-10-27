@@ -93,7 +93,6 @@ Plug 'dense-analysis/ale'
     \   'typescriptreact': ['eslint'],
     \   'rust': ['rustfmt'],
     \   'go': ['gofmt'],
-    \   '*': ['remove_trailing_lines', 'trim_whitespace'],
     \ }
 
 Plug 'junegunn/fzf', { 'do': './install --all' }
@@ -196,16 +195,7 @@ function! GetStatusLineMode() abort
     \ }[mode()]
 endfunction
 
-set statusline=\
-set statusline+=%{GetStatusLineMode()}
-set statusline+=\
-set statusline+=%.30F
-set statusline+=\
-set statusline+=%=
-set statusline+=%y\
-set statusline+=%{strftime('%H:%M')}
-
-" hi statusline guibg=CornflowerBlue guifg=FloralWhite
+set statusline=\ %{GetStatusLineMode()}\ %.30F\ %=%y\ %{strftime('%H:%M')}
 
 augroup file_types
   autocmd!
@@ -247,11 +237,12 @@ nnoremap <leader><bar> :sp<CR>
 nnoremap <silent><leader>gb :Twiggy<CR>
 nnoremap <silent><leader>gl :GV<CR>
 nnoremap <silent><leader>gs :vertical :G<CR>
-nnoremap <leader>gpf :G push origin --force-with-lease
-nnoremap <leader>gpo :G push origin
-nnoremap <leader>gpp :G push
-nnoremap <leader>gco :G checkout -b
-nnoremap G :G
+nnoremap <leader>gpu :G push origin -u HEAD
+nnoremap <leader>gpf :G push origin --force-with-lease 
+nnoremap <leader>gpo :G push origin 
+nnoremap <leader>gpp :G push 
+nnoremap <leader>gco :G checkout -b 
+nnoremap G :G 
 
 nnoremap <silent><leader>P :Prettier<CR>
 
