@@ -12,13 +12,18 @@ Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-slash'
 
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-abolish'
+
+Plug 'tpope/vim-fugitive'
+  let g:fugitive_dynamic_colors = 0
+
+Plug 'airblade/vim-gitgutter'
+  let g:gitgutter_signs = 0
 
 Plug 'vimwiki/vimwiki'
   let wiki = {}
@@ -243,6 +248,7 @@ nnoremap <leader>gpo :G push origin
 nnoremap <leader>gpp :G push 
 nnoremap <leader>gco :G checkout -b 
 nnoremap G :G 
+nnoremap <silent><leader>hh :GitGutterLineHighlightsToggle<CR>
 
 nnoremap <silent><leader>P :Prettier<CR>
 
