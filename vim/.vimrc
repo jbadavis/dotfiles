@@ -88,7 +88,7 @@ Plug 'dense-analysis/ale'
     \   'rust': ['cargo', 'rls', 'rustc'],
     \   'go': ['gofmt', 'govet', 'golint', 'gopls'],
     \   'sh': ['shellcheck'],
-    \   'markdown': ['mdl', 'writegood'],
+    \   'markdown': ['mdl'],
     \ }
 
   let g:ale_fixers = {
@@ -100,7 +100,7 @@ Plug 'dense-analysis/ale'
     \   'go': ['gofmt'],
     \ }
 
-Plug 'junegunn/fzf', { 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
   set rtp+=/usr/local/opt/fzf
   autocmd! User FzfStatusLine setlocal statusline=fzf\ 🦆
