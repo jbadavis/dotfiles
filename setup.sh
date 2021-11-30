@@ -24,8 +24,7 @@ setup_zsh() {
 setup_brew() {
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   
-  brew install fd hub ripgrep gnupg pinentry-mac
-  brew install vim --HEAD
+  brew bundle install
 }
 
 setup_node() {
