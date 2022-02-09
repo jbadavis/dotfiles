@@ -100,11 +100,11 @@ Plug 'dense-analysis/ale'
     \   'go': ['gofmt'],
     \ }
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-  set rtp+=/usr/local/opt/fzf
-  autocmd! User FzfStatusLine setlocal statusline=fzf\ 🦆
-  let g:fzf_layout = { 'window': { 'width': 0.5, 'height': 0.5 } }
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+  let g:Lf_PopupWidth = 0.5
+  let g:Lf_WindowPosition = 'popup'
+  let g:Lf_ShowDevIcons = 0
+  let g:Lf_PopupColorscheme = 'gruvbox'
 
 Plug 'SirVer/ultisnips'
   let g:UltiSnipsSnippetDir = "~/.vim/snippets/"
@@ -207,17 +207,16 @@ augroup file_types
   autocmd!
   autocmd FileType gitcommit setlocal spell spelllang=en colorcolumn=72
   autocmd FileType markdown,tex,latex,vimwiki setlocal spell spelllang=en linebreak wrap
-  autocmd! User FzfStatusLine setlocal statusline=fzf\ 🦆
   autocmd QuickFixCmdPost grep nested cwindow
 augroup end
 
 nnoremap <silent> <leader>- :Files <C-r>=expand("%:h")<CR>/<CR>
 
-nnoremap <Tab> :Buffers<CR>
-nnoremap <silent><leader>p :Files<CR>
+nnoremap <Tab> :Leaderf buffer<CR>
+nnoremap <silent><leader>p :Leaderf file<CR>
+nnoremap <silent><leader>S :Leaderf rg<CR>
 
 nnoremap <silent> <Leader>s :grep <C-R><C-W><CR>
-nnoremap <silent><leader>S :Rg<CR>
 
 nnoremap <silent><leader>aa :ALEGoToDefinition<CR>
 nnoremap <silent><leader>av :ALEGoToDefinition -vsplit<CR>
