@@ -170,7 +170,8 @@ set undofile
 set updatetime=100
 set wildignore+=/node_modules/**
 set wildmenu
-set wildmode=longest:list,full
+set wildoptions=pum
+set wildmode=longest,full
 
 set tabstop=8
 set softtabstop=2
@@ -247,7 +248,6 @@ nnoremap <leader>gpf :G push origin --force-with-lease
 nnoremap <leader>gpo :G push origin 
 nnoremap <leader>gpp :G push 
 nnoremap <leader>gco :G checkout -b 
-nnoremap G :G 
 nnoremap <silent><leader>hh :GitGutterLineHighlightsToggle<CR>
 
 nnoremap <silent><leader>P :Prettier<CR>
@@ -259,5 +259,3 @@ nnoremap <leader>ru :source ~/.vimrc<CR> :PlugUpdate<CR>
 nnoremap <silent><leader>tf :TestFile<CR>
 
 nnoremap <silent><leader>rf :RustFmt<CR>
-
-nnoremap <silent><leader>u :MundoToggle<CR>
