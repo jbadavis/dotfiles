@@ -225,7 +225,7 @@ nnoremap <silent><leader>ad :ALEDetail<CR>
 nnoremap <silent><leader>ar :ALEFindReferences<CR>
 nnoremap <silent><leader>at :ALEGoToTypeDefinition<CR>
 
-nnoremap <leader>D :cd ~/Git/nandos-platform/lib/online-ordering-ui/<CR>
+nnoremap <leader>D :cd ~/Git/
 
 nnoremap <silent><F6> :Goyo<CR>
 
