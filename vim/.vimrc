@@ -45,8 +45,6 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'dracula/vim'
-Plug 'ajmwagar/vim-deus'
-Plug 'wadackel/vim-dogrun'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'fatih/vim-go'
@@ -146,7 +144,6 @@ set backspace=indent,eol,start
 set clipboard=unnamed
 set cmdheight=2
 set completeopt=longest,menuone
-set cursorline
 set expandtab
 set fillchars=vert:\│
 set grepprg=rg\ -S\ --vimgrep
@@ -254,7 +251,5 @@ nnoremap <silent><leader>P :Prettier<CR>
 nnoremap <leader>rr :source ~/.vimrc<CR>
 nnoremap <leader>rp :source ~/.vimrc<CR> :PlugInstall<CR>
 nnoremap <leader>ru :source ~/.vimrc<CR> :PlugUpdate<CR>
-
-nnoremap <silent><leader>tf :TestFile<CR>
 
 nnoremap <silent><leader>rf :RustFmt<CR>
