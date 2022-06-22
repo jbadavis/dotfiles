@@ -80,20 +80,23 @@ Plug 'dense-analysis/ale'
   let g:ale_scss_sasslint_executable = "sasslint"
 
   let g:ale_linters = {
-    \   'typescript': ['eslint', 'tsserver'],
-    \   'javascript': ['eslint', 'tsserver'],
-    \   'typescriptreact': ['eslint', 'tsserver'],
+    \   'typescript': ['eslint', 'tsserver', 'xo'],
+    \   'javascript': ['eslint', 'tsserver', 'xo'],
+    \   'typescriptreact': ['eslint', 'tsserver', 'xo'],
     \   'rust': ['cargo', 'rls', 'rustc'],
     \   'go': ['gofmt', 'govet', 'golint', 'gopls'],
     \   'sh': ['shellcheck'],
     \   'markdown': ['mdl'],
+    \   'cs': ['OmniSharp'],
+    \   'graphql': ['gqlint'],
+    \   'kotlin': ['kotlinc', 'ktlint', 'languageserver']
     \ }
 
   let g:ale_fixers = {
     \   'css': [],
-    \   'typescript': ['eslint'],
-    \   'javascript': ['eslint'],
-    \   'typescriptreact': ['eslint'],
+    \   'typescript': ['eslint', 'xo'],
+    \   'javascript': ['eslint', 'xo'],
+    \   'typescriptreact': ['eslint', 'xo'],
     \   'rust': ['rustfmt'],
     \   'go': ['gofmt'],
     \ }
@@ -103,6 +106,7 @@ Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
   let g:Lf_WindowPosition = 'popup'
   let g:Lf_ShowDevIcons = 0
   let g:Lf_PopupColorscheme = 'gruvbox'
+  let g:Lf_UseVersionControlTool = 1
 
 Plug 'SirVer/ultisnips'
   let g:UltiSnipsSnippetDir = "~/.vim/snippets/"
@@ -170,7 +174,7 @@ set wildmenu
 set wildoptions=pum
 set wildmode=longest,full
 
-set tabstop=8
+set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab
@@ -219,7 +223,7 @@ nnoremap <silent><leader>aa :ALEGoToDefinition<CR>
 nnoremap <silent><leader>av :ALEGoToDefinition -vsplit<CR>
 nnoremap <silent><leader>as :ALEGoToDefinition -split<CR>
 nnoremap <silent><leader>ad :ALEDetail<CR>
-nnoremap <silent><leader>ar :ALEFindReferences<CR>
+nnoremap <silent><leader>ar :ALEReset<CR>
 nnoremap <silent><leader>at :ALEGoToTypeDefinition<CR>
 
 nnoremap <leader>D :cd ~/Git/
