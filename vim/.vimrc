@@ -171,7 +171,7 @@ set undofile
 set updatetime=100
 set wildignore+=/node_modules/**
 set wildmenu
-set wildoptions=pum
+set wildoptions=pum,fuzzy
 set wildmode=longest,full
 
 set tabstop=2
