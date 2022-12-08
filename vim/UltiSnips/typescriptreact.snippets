@@ -6,7 +6,7 @@ snippet af "const func = a => ..." b
 const ${1} = (${2}) => ${3}
 endsnippet
 
-snippet func "function func(a) { ... " b
+snippet nf "function func(a) { ... " b
 function ${1}(${2}) {
   ${3}
 
@@ -23,6 +23,12 @@ endsnippet
 snippet de "describe('..." b
 describe('${1}', () => {
   ${2} 
+});
+endsnippet
+
+snippet test "test('..." b
+test('${1}', () => {
+  ${2}
 });
 endsnippet
 
@@ -76,4 +82,24 @@ const ${1} = ${2};
 export default ${1}
 endsnippet
 
+snippet in "interface" 
+interface ${1} {
+  ${2}
+}
+endsnippet
+
+snippet mocked "const mocked..." 
+const mocked${1} = mocked(${2});
+endsnippet
+
+snippet cam "clearAllMocks" 
+afterEach(() => {
+  jest.clearAllMocks();
+});
+endsnippet
+
+
+snippet as "as unknown" 
+as unknown as ${1}
+endsnippet
 
