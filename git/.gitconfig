@@ -1,8 +1,15 @@
 [user]
 	name = Jack Davis
+	email = ; Add email
+	signingkey = ; Add key
 [core]
 	excludesfile = ~/.config/.gitignore
 [commit]
 	gpgsign = true
 [gpg]
 	program = gpg
+[help]
+	autocorrect = 20
+
+; [includeIf "gitdir:~/Git/me/"]
+;     path = ~/.personal.gitconfig
