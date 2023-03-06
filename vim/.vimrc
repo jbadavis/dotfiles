@@ -22,9 +22,6 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
   let g:fugitive_dynamic_colors = 0
 
-Plug 'airblade/vim-gitgutter'
-  let g:gitgutter_signs = 0
-
 Plug 'vimwiki/vimwiki'
   let wiki = {}
   let g:vimwiki_list = [{'path': '~/wiki/', 'syntax': 'markdown', 'ext': '.md'}]
@@ -72,6 +69,7 @@ Plug 'dense-analysis/ale'
   let g:ale_lint_on_text_changed = 0
   let g:ale_change_sign_column_color = 1
   let g:ale_completion_autoimport = 1
+  let g:ale_virtualtext_cursor = 0
 
   let g:ale_rust_cargo_use_clippy = 1
   let g:ale_rust_cargo_use_check = 1
@@ -101,12 +99,10 @@ Plug 'dense-analysis/ale'
     \   'go': ['gofmt'],
     \ }
 
-Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
-  let g:Lf_PopupWidth = 0.5
-  let g:Lf_WindowPosition = 'popup'
-  let g:Lf_ShowDevIcons = 0
-  let g:Lf_PopupColorscheme = 'gruvbox'
-  let g:Lf_UseVersionControlTool = 1
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+  let g:fzf_preview_window = ['right,50%', 'ctrl-/']
+  let g:fzf_layout = { 'window': { 'width': 0.6, 'height': 0.6 } }
 
 Plug 'SirVer/ultisnips'
   let g:UltiSnipsSnippetDir = "~/.vim/snippets/"
@@ -211,11 +207,13 @@ augroup file_types
   autocmd QuickFixCmdPost grep nested cwindow
 augroup end
 
+autocmd VimResized * wincmd =
+
 nnoremap <silent> <leader>- :Files <C-r>=expand("%:h")<CR>/<CR>
 
-nnoremap <Tab> :Leaderf buffer<CR>
-nnoremap <silent><leader>p :Leaderf file<CR>
-nnoremap <silent><leader>S :Leaderf rg<CR>
+nnoremap <Tab> :Buffers <CR>
+nnoremap <silent><leader>p :Files<CR>
+nnoremap <silent><leader>S :Rg<CR>
 
 nnoremap <silent> <Leader>s :grep <C-R><C-W><CR>
 
@@ -224,6 +222,7 @@ nnoremap <silent><leader>av :ALEGoToDefinition -vsplit<CR>
 nnoremap <silent><leader>as :ALEGoToDefinition -split<CR>
 nnoremap <silent><leader>ad :ALEDetail<CR>
 nnoremap <silent><leader>ar :ALEReset<CR>
+nnoremap <silent><leader>as :ALEStopAllLSPs<CR>
 nnoremap <silent><leader>at :ALEGoToTypeDefinition<CR>
 
 nnoremap <leader>D :cd ~/Git/
@@ -248,7 +247,6 @@ nnoremap <leader>gpf :G push origin --force-with-lease
 nnoremap <leader>gpo :G push origin 
 nnoremap <leader>gpp :G push 
 nnoremap <leader>gco :G checkout -b 
-nnoremap <silent><leader>hh :GitGutterLineHighlightsToggle<CR>
 
 nnoremap <silent><leader>P :Prettier<CR>
 
