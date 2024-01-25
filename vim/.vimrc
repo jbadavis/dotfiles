@@ -20,7 +20,7 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-abolish'
 
 Plug 'tpope/vim-fugitive'
-  let g:fugitive_dynamic_colors = 0
+Plug 'rbong/vim-flog'
 
 Plug 'vimwiki/vimwiki'
   let wiki = {}
@@ -37,11 +37,13 @@ Plug 'markonm/traces.vim'
 Plug 'chip/vim-fat-finger'
 Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'prettier/vim-prettier'
+Plug 'prisma/vim-prisma'
 
 Plug 'arcticicestudio/nord-vim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'dracula/vim'
+Plug 'sainnhe/everforest'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'fatih/vim-go'
@@ -135,14 +137,25 @@ endif
 syntax on
 filetype plugin indent on
 
-colo nord
+colo everforest
+
+let g:everforest_background = "hard"
+let g:everforest_spell_foreground = "colored"
+let g:everforest_diagnostic_line_highlight = 1
+
+let g:gruvbox_contrast_light = "soft"
+let g:gruvbox_contrast_dark = "medium"
+let g:gruvbox_guisp_fallback = 'bg'
+let g:gruvbox_improved_strings = 1
+let g:gruvbox_improved_warnings = 1
+let g:gruvbox_italicize_comments = 1
 
 set autoindent
 set autoread
 set background=dark
 set backspace=indent,eol,start
 set clipboard=unnamed
-set cmdheight=2
+set cmdheight=3
 set completeopt=longest,menuone
 set expandtab
 set fillchars=vert:\│
@@ -157,7 +170,7 @@ set nostartofline
 set noswapfile
 set nowrap
 set scrolloff=2
-set smartcase
+set ignorecase
 set splitbelow
 set splitright
 set timeoutlen=1000
@@ -240,7 +253,7 @@ nnoremap <leader>\ :vsp<CR>
 nnoremap <leader><bar> :sp<CR>
 
 nnoremap <silent><leader>gb :Twiggy<CR>
-nnoremap <silent><leader>gl :GV<CR>
+nnoremap <silent><leader>gl :Flogsplit<CR>
 nnoremap <silent><leader>gs :vertical :G<CR>
 nnoremap <leader>gpu :G push origin -u HEAD
 nnoremap <leader>gpf :G push origin --force-with-lease 
@@ -255,3 +268,6 @@ nnoremap <leader>rp :source ~/.vimrc<CR> :PlugInstall<CR>
 nnoremap <leader>ru :source ~/.vimrc<CR> :PlugUpdate<CR>
 
 nnoremap <silent><leader>rf :RustFmt<CR>
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
+nnoremap <leader>d :put =strftime('# %a %d-%m-%Y %H:%M')<CR>
