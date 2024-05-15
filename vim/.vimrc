@@ -122,6 +122,9 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
   let g:goyo_width = 120
 
+Plug 'github/copilot.vim'
+  let g:copilot_no_tab_map = v:true
+
 call plug#end()
 
 if has("termguicolors")
@@ -268,6 +271,9 @@ nnoremap <leader>rp :source ~/.vimrc<CR> :PlugInstall<CR>
 nnoremap <leader>ru :source ~/.vimrc<CR> :PlugUpdate<CR>
 
 nnoremap <silent><leader>rf :RustFmt<CR>
+
+imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
+
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
 nnoremap <leader>d :put =strftime('# %a %d-%m-%Y %H:%M')<CR>
