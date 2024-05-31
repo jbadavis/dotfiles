@@ -1,1 +1,1 @@
-PROMPT='🍉 %3~ %B»%b '
+PROMPT='👻 %3~ %B»%b '
