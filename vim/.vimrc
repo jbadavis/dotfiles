@@ -80,9 +80,9 @@ Plug 'dense-analysis/ale'
   let g:ale_scss_sasslint_executable = "sasslint"
 
   let g:ale_linters = {
-    \   'typescript': ['eslint', 'tsserver', 'xo'],
-    \   'javascript': ['eslint', 'tsserver', 'xo'],
-    \   'typescriptreact': ['eslint', 'tsserver', 'xo'],
+    \   'typescript': ['biome', 'eslint', 'tsserver', 'xo'],
+    \   'javascript': ['biome', 'eslint', 'tsserver', 'xo'],
+    \   'typescriptreact': ['biome', 'eslint', 'tsserver', 'xo'],
     \   'rust': ['cargo', 'rls', 'rustc'],
     \   'go': ['gofmt', 'govet', 'golint', 'gopls'],
     \   'sh': ['shellcheck'],
@@ -94,9 +94,9 @@ Plug 'dense-analysis/ale'
 
   let g:ale_fixers = {
     \   'css': [],
-    \   'typescript': ['eslint', 'xo'],
-    \   'javascript': ['eslint', 'xo'],
-    \   'typescriptreact': ['eslint', 'xo'],
+    \   'typescript': ['biome', 'eslint', 'xo'],
+    \   'javascript': ['biome', 'eslint', 'xo'],
+    \   'typescriptreact': ['biome', 'eslint', 'xo'],
     \   'rust': ['rustfmt'],
     \   'go': ['gofmt'],
     \ }
@@ -140,7 +140,7 @@ endif
 syntax on
 filetype plugin indent on
 
-colo everforest
+colo nord
 
 let g:everforest_background = "hard"
 let g:everforest_spell_foreground = "colored"
@@ -159,7 +159,7 @@ set background=dark
 set backspace=indent,eol,start
 set clipboard=unnamed
 set cmdheight=3
-set completeopt=longest,menuone
+set completeopt=longest,menuone,fuzzy
 set expandtab
 set fillchars=vert:\│
 set grepprg=rg\ -S\ --vimgrep
@@ -272,7 +272,7 @@ nnoremap <leader>ru :source ~/.vimrc<CR> :PlugUpdate<CR>
 
 nnoremap <silent><leader>rf :RustFmt<CR>
 
-imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
+imap <silent><script><expr> <c-;> copilot#Accept("\<CR>")
 
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
