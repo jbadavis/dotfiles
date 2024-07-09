@@ -131,12 +131,6 @@ if has("termguicolors")
   set termguicolors
 endif
 
-if has("gui_running")
-  set vb t_vb=
-  set guioptions=
-  set gfn=Fira\ Code\ Retina:h14
-endif
-
 syntax on
 filetype plugin indent on
 
