@@ -154,7 +154,6 @@ set backspace=indent,eol,start
 set clipboard=unnamed
 set cmdheight=3
 set completeopt=longest,menuone,fuzzy
-set expandtab
 set fillchars=vert:\│
 set grepprg=rg\ -S\ --vimgrep
 set hidden
