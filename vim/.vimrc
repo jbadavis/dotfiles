@@ -80,9 +80,9 @@ Plug 'dense-analysis/ale'
   let g:ale_scss_sasslint_executable = "sasslint"
 
   let g:ale_linters = {
-    \   'typescript': ['biome', 'eslint', 'tsserver', 'xo'],
-    \   'javascript': ['biome', 'eslint', 'tsserver', 'xo'],
-    \   'typescriptreact': ['biome', 'eslint', 'tsserver', 'xo'],
+    \   'typescript': ['biome', 'eslint', 'tsserver'],
+    \   'javascript': ['biome', 'eslint', 'tsserver'],
+    \   'typescriptreact': ['biome', 'eslint', 'tsserver'],
     \   'rust': ['cargo', 'rls', 'rustc'],
     \   'go': ['gofmt', 'govet', 'golint', 'gopls'],
     \   'sh': ['shellcheck'],
@@ -94,9 +94,9 @@ Plug 'dense-analysis/ale'
 
   let g:ale_fixers = {
     \   'css': [],
-    \   'typescript': ['biome', 'eslint', 'xo'],
-    \   'javascript': ['biome', 'eslint', 'xo'],
-    \   'typescriptreact': ['biome', 'eslint', 'xo'],
+    \   'typescript': ['biome', 'eslint'],
+    \   'javascript': ['biome', 'eslint'],
+    \   'typescriptreact': ['biome', 'eslint'],
     \   'rust': ['rustfmt'],
     \   'go': ['gofmt'],
     \ }
