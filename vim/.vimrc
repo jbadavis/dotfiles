@@ -124,6 +124,8 @@ Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 
 Plug 'github/copilot.vim'
   let g:copilot_no_tab_map = v:true
+  let g:copilot_workspace_folders =
+     \ ["~/Git"]
 
 call plug#end()
 
@@ -136,9 +138,11 @@ filetype plugin indent on
 
 colo nord
 
-let g:everforest_background = "hard"
+let g:everforest_background = "medium"
 let g:everforest_spell_foreground = "colored"
 let g:everforest_diagnostic_line_highlight = 1
+let g:everforest_diagnostic_virtual_text = "colored"
+let g:everforest_enable_italic = 1
 
 let g:gruvbox_contrast_light = "soft"
 let g:gruvbox_contrast_dark = "medium"
@@ -159,7 +163,7 @@ set grepprg=rg\ -S\ --vimgrep
 set hidden
 set incsearch
 set laststatus=2
-set linespace=2
+set linespace=4
 set nobackup
 set noshowmode
 set nostartofline
@@ -236,7 +240,7 @@ nnoremap <silent><leader>at :ALEGoToTypeDefinition<CR>
 
 nnoremap <leader>D :cd ~/Git/
 
-nnoremap <silent><F6> :Goyo<CR>
+nnoremap <silent><F6> :Goyo 90<CR>
 
 nnoremap <silent><leader>' :term<CR>
 
@@ -249,7 +253,7 @@ nnoremap <leader>\ :vsp<CR>
 nnoremap <leader><bar> :sp<CR>
 
 nnoremap <silent><leader>gb :Twiggy<CR>
-nnoremap <silent><leader>gl :Flogsplit<CR>
+nnoremap <silent><leader>gl :GV<CR>
 nnoremap <silent><leader>gs :vertical :G<CR>
 nnoremap <leader>gpu :G push origin -u HEAD
 nnoremap <leader>gpf :G push origin --force-with-lease 
@@ -266,6 +270,7 @@ nnoremap <leader>ru :source ~/.vimrc<CR> :PlugUpdate<CR>
 nnoremap <silent><leader>rf :RustFmt<CR>
 
 imap <silent><script><expr> <c-;> copilot#Accept("\<CR>")
+imap <silent><c-l> <Plug>(copilot-accept-word)
 
 imap <c-x><c-l> <plug>(fzf-complete-line)
 

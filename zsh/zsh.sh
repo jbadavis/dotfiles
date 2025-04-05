@@ -43,6 +43,11 @@ export CDPATH=.:~/Git
 export KEYTIMEOUT=1
 export GPG_TTY=$(tty)
 
+export DOCKER_DEFAULT_PLATFORM=linux/amd64
+
+# Update once a week
+export HOMEBREW_AUTO_UPDATE_SECS="604800"
+
 alias ag='ag -p ~/.ignore'
 alias ls="ls -lrthaG"
 alias ni="npm install"
