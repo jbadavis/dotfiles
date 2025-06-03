@@ -22,6 +22,8 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
 Plug 'rbong/vim-flog'
 
+Plug 'lervag/vimtex'
+
 Plug 'vimwiki/vimwiki'
   let wiki = {}
   let g:vimwiki_list = [{'path': '~/wiki/', 'syntax': 'markdown', 'ext': '.md'}]
@@ -41,8 +43,6 @@ Plug 'prisma/vim-prisma'
 
 Plug 'arcticicestudio/nord-vim'
 Plug 'gruvbox-community/gruvbox'
-Plug 'drewtempelmeyer/palenight.vim'
-Plug 'dracula/vim'
 Plug 'sainnhe/everforest'
 
 Plug 'sheerun/vim-polyglot'
@@ -99,12 +99,12 @@ Plug 'dense-analysis/ale'
     \   'typescriptreact': ['biome', 'eslint'],
     \   'rust': ['rustfmt'],
     \   'go': ['gofmt'],
+    \   'terraform': ['terraform'],
     \ }
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-  let g:fzf_preview_window = ['right,50%', 'ctrl-/']
-  let g:fzf_layout = { 'window': { 'width': 0.6, 'height': 0.6 } }
+  let g:fzf_layout = { 'window': { 'width': 0.5, 'height': 0.5 } }
 
 Plug 'SirVer/ultisnips'
   let g:UltiSnipsSnippetDir = "~/.vim/snippets/"
