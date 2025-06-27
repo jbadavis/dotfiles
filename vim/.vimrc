@@ -46,6 +46,7 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'sainnhe/everforest'
 
 Plug 'sheerun/vim-polyglot'
+Plug 'hashivim/vim-terraform'
 Plug 'fatih/vim-go'
   let g:go_term_mode = 'split'
   let g:go_term_enabled = 1
