@@ -47,6 +47,7 @@ Plug 'sainnhe/everforest'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'hashivim/vim-terraform'
+Plug 'evanleck/vim-svelte'
 Plug 'fatih/vim-go'
   let g:go_term_mode = 'split'
   let g:go_term_enabled = 1
@@ -139,19 +140,6 @@ filetype plugin indent on
 
 colo nord
 
-let g:everforest_background = "medium"
-let g:everforest_spell_foreground = "colored"
-let g:everforest_diagnostic_line_highlight = 1
-let g:everforest_diagnostic_virtual_text = "colored"
-let g:everforest_enable_italic = 1
-
-let g:gruvbox_contrast_light = "soft"
-let g:gruvbox_contrast_dark = "medium"
-let g:gruvbox_guisp_fallback = 'bg'
-let g:gruvbox_improved_strings = 1
-let g:gruvbox_improved_warnings = 1
-let g:gruvbox_italicize_comments = 1
-
 set autoindent
 set autoread
 set background=dark
@@ -183,6 +171,7 @@ set wildignore+=/node_modules/**
 set wildmenu
 set wildoptions=pum,fuzzy
 set wildmode=longest,full
+set shortmess=I
 
 set tabstop=2
 set softtabstop=2
@@ -245,11 +234,6 @@ nnoremap <silent><F6> :Goyo 90<CR>
 
 nnoremap <silent><leader>' :term<CR>
 
-nnoremap <silent><leader>td :term yarn dev<CR>
-nnoremap <silent><leader>tt :term yarn test<CR>
-nnoremap <silent><leader>tw :term yarn test:watch<CR>
-nnoremap <silent><leader>tv :term yarn validate<CR>
-
 nnoremap <leader>\ :vsp<CR>
 nnoremap <leader><bar> :sp<CR>
 
@@ -270,6 +254,7 @@ nnoremap <leader>ru :source ~/.vimrc<CR> :PlugUpdate<CR>
 
 nnoremap <silent><leader>rf :RustFmt<CR>
 
+nnoremap <silent><leader>co :term copilot<CR>
 imap <silent><script><expr> <c-;> copilot#Accept("\<CR>")
 imap <silent><c-l> <Plug>(copilot-accept-word)
 
