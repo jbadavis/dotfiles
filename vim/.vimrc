@@ -210,6 +210,12 @@ augroup file_types
   autocmd QuickFixCmdPost grep nested cwindow
 augroup end
 
+" Hide :cmd after return
+augroup cmdline
+    autocmd!
+    autocmd CmdlineLeave : echo ''
+augroup end
+
 autocmd VimResized * wincmd =
 
 nnoremap <silent> <leader>- :Files <C-r>=expand("%:h")<CR>/<CR>
