@@ -240,6 +240,9 @@ nnoremap <silent><F6> :Goyo 90<CR>
 
 nnoremap <silent><leader>' :term<CR>
 
+nnoremap <silent>j gj
+nnoremap <silent>k gk
+
 nnoremap <leader>\ :vsp<CR>
 nnoremap <leader><bar> :sp<CR>
 
