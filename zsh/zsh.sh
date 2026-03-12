@@ -13,9 +13,10 @@ init_fzf() {
 
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+  source <(fzf --zsh)
+
   bindkey '^r' fzf-history-widget
   bindkey '^t' fzf-file-widget
-
 }
 
 path() {
@@ -56,6 +57,8 @@ alias nr="npm run "
 alias cn="cargo new "
 alias cr="cargo run "
 alias ct="cargo test "
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 bindkey -v
 
