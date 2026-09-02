@@ -160,13 +160,14 @@ set noswapfile
 set nowrap
 set scrolloff=2
 set ignorecase
+set smartcase
 set splitbelow
 set splitright
 set timeoutlen=1000
 set ttimeoutlen=0
 set undodir=~/.vim/tmp/undo//
 set undofile
-set updatetime=100
+set updatetime=250
 set wildignore+=/node_modules/**
 set wildmenu
 set wildoptions=pum,fuzzy
@@ -231,7 +232,6 @@ nnoremap <silent><leader>av :ALEGoToDefinition -vsplit<CR>
 nnoremap <silent><leader>as :ALEGoToDefinition -split<CR>
 nnoremap <silent><leader>ad :ALEDetail<CR>
 nnoremap <silent><leader>ar :ALEReset<CR>
-nnoremap <silent><leader>as :ALEStopAllLSPs<CR>
 nnoremap <silent><leader>at :ALEGoToTypeDefinition<CR>
 
 nnoremap <leader>D :cd ~/Git/
